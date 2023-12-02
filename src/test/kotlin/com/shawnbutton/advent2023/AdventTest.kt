@@ -15,11 +15,6 @@ class AdventTest {
     }
 
     @Test
-    fun should_load_file() {
-        assertEquals(listOf("first line", "second line"), loadFle("/sample.txt"))
-    }
-
-    @Test
     fun should_sum_lines() {
         val lines = listOf("1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7")
         assertEquals(sumAll(lines), 142)

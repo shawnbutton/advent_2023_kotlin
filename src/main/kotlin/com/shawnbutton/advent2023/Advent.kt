@@ -70,13 +70,8 @@ fun sumAllWithWords(lines: List<String>): Int {
         .sum()
 }
 
-fun loadFle(fileName: String): List<String> {
-    val contents = Any::class::class.java.getResource(fileName)!!.readText()
-    return contents.split("\n").dropLast(1)
-}
-
 fun main() {
-    val lines = loadFle("/input.txt")
+    val lines = loadFile("/input.txt")
 
     print(sumAll(lines))
     print("\n")

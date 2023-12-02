@@ -58,9 +58,10 @@ fun lastToken(tokenHits: List<List<Int>>): Int? {
     }?.index
 }
 
-fun sumAllWithWords(sampleB: List<String>): Int {
-
-    return 29
+fun sumAllWithWords(lines: List<String>): Int {
+    return lines
+        .map(::calcDigitsWithWords)
+        .sum()
 }
 
 
@@ -73,5 +74,7 @@ fun main() {
     val lines = loadFle("/input.txt")
 
     print(sumAll(lines))
+    print("\n")
+    print(sumAllWithWords(lines))
 }
 

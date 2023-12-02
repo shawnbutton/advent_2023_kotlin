@@ -17,19 +17,29 @@ fun sumAll(lines: List<String>): Int {
         .map(calcDigits)
         .sum()
 }
-fun calcDigitsWithWords (line: String): Int? {
+fun calcDigitsWithWords (line: String): Int {
     val numberWords = listOf("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
     val numberDigits = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9")
 
     val tokens = numberWords + numberDigits
 
     val tokenHits = tokens.map { getPositionsOfTokenInString(line, it) }
-    val lowestToken = firstToken(tokenHits)
-    return if (lowestToken.isLessThan(9)) {
-        lowestToken?.plus(1)
+
+    val firstToken = firstToken(tokenHits)
+    val firstDigit = if (firstToken.isLessThan(9)) {
+        firstToken?.plus(1)
     } else {
-        lowestToken?.minus(8)
+        firstToken?.minus(8)
     }
+
+    val lastToken = lastToken(tokenHits)
+    val lastDigit = if (lastToken.isLessThan(9)) {
+        lastToken?.plus(1)
+    } else {
+        lastToken?.minus(8)
+    }
+
+    return firstDigit!!.times(10).plus(lastDigit!!)
 }
 
 fun getPositionsOfTokenInString(line: String, token: String): List<Int> {

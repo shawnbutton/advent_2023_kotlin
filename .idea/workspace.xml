@@ -199,8 +199,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/Advent.kt</url>
-          <line>26</line>
-          <option name="timeStamp" value="8" />
+          <line>27</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -37,13 +37,13 @@ class AdventTest {
 
     @Test
     fun shouldConsiderSpelledLetters() {
-        assertEquals(2, calcDigitsWithWords("two1nine"))
-        assertEquals(8, calcDigitsWithWords("eightwothree"))
-        assertEquals(1, calcDigitsWithWords("abcone2threexyz"))
-        assertEquals(2, calcDigitsWithWords("xtwone3four"))
-        assertEquals(4, calcDigitsWithWords("4nineeightseven2"))
-        assertEquals(1, calcDigitsWithWords("zoneight234"))
-        assertEquals(7, calcDigitsWithWords("7pqrstsixteen"))
+        assertEquals(29, calcDigitsWithWords("two1nine"))
+        assertEquals(83, calcDigitsWithWords("eightwothree"))
+        assertEquals(13, calcDigitsWithWords("abcone2threexyz"))
+        assertEquals(24, calcDigitsWithWords("xtwone3four"))
+        assertEquals(42, calcDigitsWithWords("4nineeightseven2"))
+        assertEquals(14, calcDigitsWithWords("zoneight234"))
+        assertEquals(76, calcDigitsWithWords("7pqrstsixteen"))
     }
 
     @Test

@@ -3,7 +3,7 @@ package com.shawnbutton.advent2023
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class AdventTest {
+class Day01Test {
     @Test
     fun should_calculate_value_of_line_from_digits() {
         assertEquals(13, calcDigits("x123x"))

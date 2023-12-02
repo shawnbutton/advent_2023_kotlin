@@ -176,8 +176,8 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AdventKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.AdventKt" />
+    <configuration name="Day01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.Day01Kt" />
       <module name="advent_2023_kotlin.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,7 +186,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
-        <item itemvalue="Kotlin.AdventKt" />
+        <item itemvalue="Kotlin.Day01Kt" />
         <item itemvalue="Gradle.AdventTest.shouldConsiderSpelledLetters" />
         <item itemvalue="Gradle.AdventTest" />
         <item itemvalue="Gradle.AdventTest.shouldGetLowestListFromListOfListOfNumbers" />

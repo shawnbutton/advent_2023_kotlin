@@ -24,7 +24,7 @@ fun calcDigitsWithWords (line: String): Int? {
     val tokens = numberWords + numberDigits
 
     val tokenHits = tokens.map { getPositionsOfTokenInString(line, it) }
-    val lowestToken = lowestToken(tokenHits)
+    val lowestToken = firstToken(tokenHits)
     return if (lowestToken.isLessThan(9)) {
         lowestToken?.plus(1)
     } else {
@@ -36,9 +36,15 @@ fun getPositionsOfTokenInString(line: String, token: String): List<Int> {
     return Regex(token).findAll(line).map { it.range.start }.toList()
 }
 
-fun lowestToken(tokenHits: List<List<Int>>): Int? {
+fun firstToken(tokenHits: List<List<Int>>): Int? {
     return tokenHits.withIndex().minByOrNull { (_, innerList) ->
         innerList.firstOrNull() ?: 999
+    }?.index
+}
+
+fun lastToken(tokenHits: List<List<Int>>): Int? {
+    return tokenHits.withIndex().maxByOrNull { (_, innerList) ->
+        innerList.lastOrNull() ?: -999
     }?.index
 }
 

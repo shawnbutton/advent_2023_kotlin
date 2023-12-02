@@ -61,8 +61,8 @@ class AdventTest {
         val listLowest = listOf(2, 6)
         val list3 = listOf(5, 7)
 
-        assertEquals(lowestToken(listOf(list1, listLowest, list3)), 1)
-        assertEquals(lowestToken(listOf(listLowest, list1, list3)), 0)
+        assertEquals(firstToken(listOf(list1, listLowest, list3)), 1)
+        assertEquals(firstToken(listOf(listLowest, list1, list3)), 0)
     }
 
 

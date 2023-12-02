@@ -5,13 +5,6 @@ import org.junit.jupiter.api.Test
 
 class AdventTest {
     @Test
-    fun should_calculate_sum() {
-        val result = sum(1, 2)
-
-        assertEquals(3, result)
-    }
-
-    @Test
     fun should_calculate_value_of_line_from_digits() {
         assertEquals(13, calcDigits("x123x"))
         assertEquals(24, calcDigits("234x"))
@@ -32,10 +25,52 @@ class AdventTest {
         assertEquals(sumAll(lines), 142)
     }
 
-    @Test
-    fun doIt() {
-        val lines = loadFle("/input.txt")
+    val sampleB = listOf(
+        "two1nine",
+        "eightwothree",
+        "abcone2threexyz",
+        "xtwone3four",
+        "4nineeightseven2",
+        "zoneight234",
+        "7pqrstsixteen"
+    )
 
-        assertEquals(sumAll(lines), 142)
+    @Test
+    fun shouldConsiderSpelledLetters() {
+        assertEquals(2, calcDigitsWithWords("two1nine"))
+        assertEquals(8, calcDigitsWithWords("eightwothree"))
+        assertEquals(1, calcDigitsWithWords("abcone2threexyz"))
+        assertEquals(2, calcDigitsWithWords("xtwone3four"))
+        assertEquals(4, calcDigitsWithWords("4nineeightseven2"))
+        assertEquals(1, calcDigitsWithWords("zoneight234"))
+        assertEquals(7, calcDigitsWithWords("7pqrstsixteen"))
     }
+
+    @Test
+    fun shouldGetPositionsInString() {
+        assertEquals(getPositionsOfTokenInString("A", "A"), listOf(0))
+        assertEquals(getPositionsOfTokenInString("AA", "A"), listOf(0, 1))
+        assertEquals(getPositionsOfTokenInString("ABA", "A"), listOf(0, 2))
+        assertEquals(getPositionsOfTokenInString("BABBBAB", "A"), listOf(1, 5))
+        assertEquals(getPositionsOfTokenInString("4nineeightseven2", "nine"), listOf(1))
+    }
+
+    @Test
+    fun shouldGetLowestListFromListOfListOfNumbers() {
+        val list1 = listOf(3, 4)
+        val listLowest = listOf(2, 6)
+        val list3 = listOf(5, 7)
+
+        assertEquals(lowestToken(listOf(list1, listLowest, list3)), 1)
+        assertEquals(lowestToken(listOf(listLowest, list1, list3)), 0)
+    }
+
+
+    @Test
+    fun shouldSumAllWithWords() {
+
+
+
+    }
+
 }

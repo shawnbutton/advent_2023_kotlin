@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/Advent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/Advent.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/AdventTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/AdventTest.kt" afterDir="false" />
@@ -48,7 +47,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.39310345",
-    "settings.editor.selected.configurable": "configurable.group.language"
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -57,11 +56,17 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.AdventKt">
+  <component name="RunManager" selected="Gradle.AdventTest.shouldConsiderSpelledLetters">
     <configuration name="AdventTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -86,7 +91,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AdventTest.should_calculate_sum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AdventTest.shouldConsiderSpelledLetters" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -99,7 +104,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.AdventTest.should_calculate_sum&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.AdventTest.shouldConsiderSpelledLetters&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -110,7 +115,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AdventTest.should_load_file" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AdventTest.shouldGetLowestListFromListOfListOfNumbers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -123,7 +128,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.AdventTest.should_load_file&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.AdventTest.shouldGetLowestListFromListOfListOfNumbers&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -134,7 +139,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'advent_2023_kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AdventTest.shouldGetPositionsInString" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,6 +151,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.AdventTest.shouldGetPositionsInString&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.AdventKt" />
+        <item itemvalue="Gradle.AdventTest.shouldConsiderSpelledLetters" />
         <item itemvalue="Gradle.AdventTest" />
-        <item itemvalue="Gradle.AdventTest.should_load_file" />
-        <item itemvalue="Gradle.AdventTest.should_calculate_sum" />
-        <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
+        <item itemvalue="Gradle.AdventTest.shouldGetLowestListFromListOfListOfNumbers" />
+        <item itemvalue="Gradle.AdventTest.shouldGetPositionsInString" />
+        <item itemvalue="Kotlin.AdventKt" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +194,17 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/Advent.kt</url>
+          <line>21</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

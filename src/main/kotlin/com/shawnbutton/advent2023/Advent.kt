@@ -1,25 +1,52 @@
 package com.shawnbutton.advent2023
+fun Int?.isLessThan(other: Int?) =
+    this != null && other != null && this < other
 
-import java.io.File
-
-fun calcDigits(line: String): Int {
+val calcDigits = { line: String ->
     val digits = line
         .toCharArray()
         .filter { it.isDigit() }
 
     val rightDigits = "" + digits.first() + digits.last()
 
-    return rightDigits.toInt()
-}
-
-fun sum(a: Int, b: Int): Int {
-    return a + b
+    rightDigits.toInt()
 }
 
 fun sumAll(lines: List<String>): Int {
-    return lines.map(::calcDigits)
-        .reduce(::sum)
+    return lines
+        .map(calcDigits)
+        .sum()
 }
+fun calcDigitsWithWords (line: String): Int? {
+    val numberWords = listOf("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+    val numberDigits = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9")
+
+    val tokens = numberWords + numberDigits
+
+    val tokenHits = tokens.map { getPositionsOfTokenInString(line, it) }
+    val lowestToken = lowestToken(tokenHits)
+    return if (lowestToken.isLessThan(9)) {
+        lowestToken?.plus(1)
+    } else {
+        lowestToken?.minus(8)
+    }
+}
+
+fun getPositionsOfTokenInString(line: String, token: String): List<Int> {
+    return Regex(token).findAll(line).map { it.range.start }.toList()
+}
+
+fun lowestToken(tokenHits: List<List<Int>>): Int? {
+    return tokenHits.withIndex().minByOrNull { (_, innerList) ->
+        innerList.firstOrNull() ?: 999
+    }?.index
+}
+
+fun sumAllWithWords(sampleB: List<String>): Int {
+
+    return 29
+}
+
 
 fun loadFle(fileName: String): List<String> {
     val contents = Any::class::class.java.getResource(fileName)!!.readText()

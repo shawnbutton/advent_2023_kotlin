@@ -2,19 +2,19 @@ package com.shawnbutton.advent2023
 fun Int?.isLessThan(other: Int?) =
     this != null && other != null && this < other
 
-val calcDigits = { line: String ->
+fun calcDigits(line: String): Int {
     val digits = line
         .toCharArray()
         .filter { it.isDigit() }
 
     val rightDigits = "" + digits.first() + digits.last()
 
-    rightDigits.toInt()
+    return rightDigits.toInt()
 }
 
 fun sumAll(lines: List<String>): Int {
     return lines
-        .map(calcDigits)
+        .map(::calcDigits)
         .sum()
 }
 fun calcDigitsWithWords (line: String): Int {
@@ -25,21 +25,27 @@ fun calcDigitsWithWords (line: String): Int {
 
     val tokenHits = tokens.map { getPositionsOfTokenInString(line, it) }
 
-    val firstToken = firstToken(tokenHits)
-    val firstDigit = if (firstToken.isLessThan(9)) {
-        firstToken?.plus(1)
-    } else {
-        firstToken?.minus(8)
-    }
+    return firstDigit(tokenHits)!!.times(10).plus(secondDigit(tokenHits)!!)
+}
 
+private fun secondDigit(tokenHits: List<List<Int>>): Int? {
     val lastToken = lastToken(tokenHits)
     val lastDigit = if (lastToken.isLessThan(9)) {
         lastToken?.plus(1)
     } else {
         lastToken?.minus(8)
     }
+    return lastDigit
+}
 
-    return firstDigit!!.times(10).plus(lastDigit!!)
+private fun firstDigit(tokenHits: List<List<Int>>): Int? {
+    val firstToken = firstToken(tokenHits)
+    val firstDigit = if (firstToken.isLessThan(9)) {
+        firstToken?.plus(1)
+    } else {
+        firstToken?.minus(8)
+    }
+    return firstDigit
 }
 
 fun getPositionsOfTokenInString(line: String, token: String): List<Int> {
@@ -63,7 +69,6 @@ fun sumAllWithWords(lines: List<String>): Int {
         .map(::calcDigitsWithWords)
         .sum()
 }
-
 
 fun loadFle(fileName: String): List<String> {
     val contents = Any::class::class.java.getResource(fileName)!!.readText()

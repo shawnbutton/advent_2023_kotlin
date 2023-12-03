@@ -3,8 +3,20 @@ package com.shawnbutton.advent2023
 data class Draw(
     val blue: Int,
     val red: Int,
-    val green: Int,
-)
+    val green: Int
+) {
+    fun withMaxColours (other: Draw): Draw {
+        return Draw(
+            blue = maxOf(this.blue, other.blue),
+            red = maxOf(this.red, other.red),
+            green = maxOf(this.green, other.green)
+        )
+    }
+
+    fun calcPower(): Int {
+        return blue * red * green
+    }
+}
 
 data class Game(
     val number: Int,
@@ -41,17 +53,27 @@ fun isPossible(game: Game): Boolean {
     }
 }
 
+fun calculateMinimumCubes(game: Game): Draw {
+    return game.draws.reduce(Draw::withMaxColours)
+}
+
 fun main() {
     val lines = loadFile("/day02.txt")
 
     print(doPart1(lines))
     print("\n")
-//    print(sumAllWithWords(lines))
+    print(doPart2(lines))
 }
 
 fun doPart1(lines: List<String>): Int {
     val games = lines.map { parseGame(it) }
     val possible = games.filter { isPossible(it) }
     return possible.sumOf(Game::number)
+}
+
+fun doPart2(lines: List<String>): Int {
+    val games = lines.map { parseGame(it) }
+    val minimumCubes = games.map { calculateMinimumCubes(it) }
+    return minimumCubes.sumOf(Draw::calcPower)
 }
 

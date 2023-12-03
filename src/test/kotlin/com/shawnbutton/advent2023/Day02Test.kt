@@ -105,4 +105,19 @@ class Day02Test {
     }
 
 
+    @Test
+    fun shouldCalculateMinimumCubes() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 1, red = 3, green = 3),
+                Draw(blue = 2, red = 2, green = 4)
+            )
+        )
+        val expected = Draw(2, 3, 4);
+
+        assertEquals(expected, calculateMinimumCubes(game))
+    }
+
+
 }

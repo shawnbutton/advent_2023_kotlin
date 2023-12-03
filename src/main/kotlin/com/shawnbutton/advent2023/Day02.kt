@@ -36,14 +36,13 @@ fun parseDraw(drawString: String): Draw {
 }
 
 fun isPossible(game: Game): Boolean {
-    val totalBlue = game.draws.sumOf { it.blue }
-    val totalRed = game.draws.sumOf { it.red }
-    val totalGreen = game.draws.sumOf { it.green }
-    return totalBlue <= 14 && totalRed <= 12 && totalGreen <= 13
+    return !game.draws.any {
+        it.blue > 14 || it.red > 12 || it.green > 13
+    }
 }
 
 fun main() {
-    val lines = loadFile("/day01.txt")
+    val lines = loadFile("/day02.txt")
 
     print(doPart1(lines))
     print("\n")
@@ -51,6 +50,8 @@ fun main() {
 }
 
 fun doPart1(lines: List<String>): Int {
-    TODO("Not yet implemented")
+    val games = lines.map { parseGame(it) }
+    val possible = games.filter { isPossible(it) }
+    return possible.sumOf(Game::number)
 }
 

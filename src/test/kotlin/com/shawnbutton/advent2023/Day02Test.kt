@@ -58,8 +58,8 @@ class Day02Test {
         val game = Game(
             number = 1,
             draws = listOf(
-                Draw(blue = 7, red = 6, green = 6),
-                Draw(blue = 7, red = 6, green = 7)
+                Draw(blue = 14, red = 12, green = 13),
+                Draw(blue = 14, red = 12, green = 13)
             )
         )
 
@@ -71,8 +71,8 @@ class Day02Test {
         val game = Game(
             number = 1,
             draws = listOf(
-                Draw(blue = 7, red = 6, green = 6),
-                Draw(blue = 8, red = 6, green = 7)
+                Draw(blue = 14, red = 12, green = 13),
+                Draw(blue = 15, red = 12, green = 13)
             )
         )
 
@@ -84,8 +84,8 @@ class Day02Test {
         val game = Game(
             number = 1,
             draws = listOf(
-                Draw(blue = 7, red = 7, green = 6),
-                Draw(blue = 7, red = 6, green = 7)
+                Draw(blue = 14, red = 12, green = 13),
+                Draw(blue = 14, red = 13, green = 13)
             )
         )
 
@@ -97,8 +97,7 @@ class Day02Test {
         val game = Game(
             number = 1,
             draws = listOf(
-                Draw(blue = 7, red = 6, green = 6),
-                Draw(blue = 7, red = 6, green = 8)
+                Draw(blue = 14, red = 12, green = 14)
             )
         )
 

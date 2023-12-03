@@ -11,6 +11,17 @@ fun main() {
     print(com.shawnbutton.advent2023.day02.doPart2(lines))
 }
 
+fun getPositionsOfSymbolsInString(line: String): List<Int> {
+    if (line.isEmpty()) {
+        return listOf()
+    }
+    val temp = line.toCharArray().map { it ->
+        it != '.' && !it.isDigit()
+    }.withIndex().filter { it.value }.map { it.index }
+    print(temp)
+    return temp
+}
+
 fun doPart1(lines: List<String>): Int {
     return -1
 }

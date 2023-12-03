@@ -19,15 +19,20 @@ class Day03Test {
     val line9 = ".664.598.."
 
     @Test
-    fun shouldListOfSymbolsLocations() {
+    fun shouldMakeListOfSymbolsLocations() {
         assertEquals(listOf<Int>(), getPositionsOfSymbolsInString(""))
         assertEquals(listOf(0), getPositionsOfSymbolsInString("*"))
         assertEquals(listOf(0,1), getPositionsOfSymbolsInString("++"))
         assertEquals(listOf(1), getPositionsOfSymbolsInString(".+"))
         assertEquals(listOf(11), getPositionsOfSymbolsInString(".0123456789+"))
-
     }
 
+    @Test
+    fun shouldMakeListOfPartLocations() {
+        assertEquals(listOf(Part(123, 0, 2)), getPositionsOfPartsInString("123"))
+        assertEquals(listOf(Part(123, 0, 2)), getPositionsOfPartsInString("123"))
+        assertEquals(listOf(Part(value=123, start=1, end=3), Part(value=45, start=5, end=6)), getPositionsOfPartsInString("#123$45%"))
+    }
 
 
 }

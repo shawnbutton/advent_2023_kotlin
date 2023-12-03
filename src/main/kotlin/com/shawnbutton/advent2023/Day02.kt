@@ -32,7 +32,14 @@ fun parseDraw(drawString: String): Draw {
             else -> {}
         }
     }
-  return Draw(blue, red, green)
+    return Draw(blue, red, green)
+}
+
+fun isPossible(game: Game): Boolean {
+    val totalBlue = game.draws.sumOf { it.blue }
+    val totalRed = game.draws.sumOf { it.red }
+    val totalGreen = game.draws.sumOf { it.green }
+    return totalBlue <= 14 && totalRed <= 12 && totalGreen <= 13
 }
 
 fun main() {

@@ -39,4 +39,71 @@ class Day02Test {
 
         assertEquals(expected, parseGame(game5))
     }
+
+    // 12 red cubes, 13 green cubes, and 14 blue cubes
+    @Test
+    fun shouldBePossibleWithAllInOneDraw() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 14, red = 12, green = 13),
+            )
+        )
+
+        assertEquals(true, isPossible(game))
+    }
+
+    @Test
+    fun shouldBePossibleWithMultipleDraws() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 7, red = 6, green = 6),
+                Draw(blue = 7, red = 6, green = 7)
+            )
+        )
+
+        assertEquals(true, isPossible(game))
+    }
+
+    @Test
+    fun shouldNOTBePossibleIfTooManyBlue() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 7, red = 6, green = 6),
+                Draw(blue = 8, red = 6, green = 7)
+            )
+        )
+
+        assertEquals(false, isPossible(game))
+    }
+
+    @Test
+    fun shouldNOTBePossibleIfTooManyRed() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 7, red = 7, green = 6),
+                Draw(blue = 7, red = 6, green = 7)
+            )
+        )
+
+        assertEquals(false, isPossible(game))
+    }
+
+    @Test
+    fun shouldNOTBePossibleIfTooManyGreen() {
+        val game = Game(
+            number = 1,
+            draws = listOf(
+                Draw(blue = 7, red = 6, green = 6),
+                Draw(blue = 7, red = 6, green = 8)
+            )
+        )
+
+        assertEquals(false, isPossible(game))
+    }
+
+
 }

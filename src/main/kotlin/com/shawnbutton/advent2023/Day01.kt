@@ -71,7 +71,7 @@ fun sumAllWithWords(lines: List<String>): Int {
 }
 
 fun main() {
-    val lines = loadFile("/input.txt")
+    val lines = loadFile("/day01.txt")
 
     print(sumAll(lines))
     print("\n")

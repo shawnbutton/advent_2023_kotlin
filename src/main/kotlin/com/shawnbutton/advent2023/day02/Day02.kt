@@ -1,4 +1,6 @@
-package com.shawnbutton.advent2023
+package com.shawnbutton.advent2023.day02
+
+import com.shawnbutton.advent2023.loadFile
 
 data class Draw(
     val blue: Int,

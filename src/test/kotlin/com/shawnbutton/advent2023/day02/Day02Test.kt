@@ -1,5 +1,6 @@
-package com.shawnbutton.advent2023
+package com.shawnbutton.advent2023.day02
 
+import com.shawnbutton.advent2023.day02.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

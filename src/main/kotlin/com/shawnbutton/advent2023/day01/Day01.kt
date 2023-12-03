@@ -1,4 +1,7 @@
-package com.shawnbutton.advent2023
+package com.shawnbutton.advent2023.day01
+
+import com.shawnbutton.advent2023.loadFile
+
 fun Int?.isLessThan(other: Int?) =
     this != null && other != null && this < other
 

@@ -7,7 +7,7 @@ import kotlin.math.pow
 data class Card(val cardNumber: Int, val winning: List<Int>, val yours: List<Int>)
 
 fun parseLine(line: String): Card {
-    val cardNumber = line.substringAfter("Card ").substringBefore(":").toInt()
+    val cardNumber = line.substringAfter("Card ").substringBefore(":").trim().toInt()
     val winning = line.substringAfter(": ").substringBefore(" | ").split(" ")
         .filter(String::isNotEmpty)
         .map { it.toInt() }

@@ -1,7 +1,5 @@
 package com.shawnbutton.advent2023.day03
 
-import com.shawnbutton.advent2023.day02.game1
-import com.shawnbutton.advent2023.day02.parseGame
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -34,5 +32,25 @@ class Day03Test {
         assertEquals(listOf(Part(value=123, start=1, end=3), Part(value=45, start=5, end=6)), getPositionsOfPartsInString("#123$45%"))
     }
 
+
+    @Test
+    fun shouldDetermineIfSymbolForPart() {
+        assertEquals(false,
+            isSymbolForPart(Part(123, 10, 12), listOf(8)))
+
+        assertEquals(true,
+            isSymbolForPart(Part(123, 10, 12), listOf(9)))
+        assertEquals(true,
+            isSymbolForPart(Part(123, 10, 12), listOf(10)))
+        assertEquals(true,
+            isSymbolForPart(Part(123, 10, 12), listOf(11)))
+        assertEquals(true,
+            isSymbolForPart(Part(123, 10, 12), listOf(12)))
+        assertEquals(true,
+            isSymbolForPart(Part(123, 10, 12), listOf(13)))
+
+        assertEquals(false,
+            isSymbolForPart(Part(123, 10, 12), listOf(14)))
+    }
 
 }

@@ -7,9 +7,9 @@ data class Part(val value: Int, val start: Int, val end: Int)
 fun main() {
     val lines = loadFile("/day03.txt")
 
-    print(com.shawnbutton.advent2023.day02.doPart1(lines))
+    print(doPart1(lines))
     print("\n")
-    print(com.shawnbutton.advent2023.day02.doPart2(lines))
+//    print(doPart2(lines))
 }
 
 fun getPositionsOfSymbolsInString(line: String): List<Int> {
@@ -51,13 +51,43 @@ fun getPositionsOfPartsInString(line: String): List<Part> {
         parts.add(Part(currentNumber.toInt(), line.length - currentNumber.length, line.length - 1))
     }
 
-    print(parts)
     return parts
 }
 
+fun isSymbolForPart(part: Part, symbols: List<Int>): Boolean {
+    return symbols.any { it >= part.start - 1 && it <= part.end + 1 }
+}
+
+
 
 fun doPart1(lines: List<String>): Int {
+    val symbolsLines = lines.map { getPositionsOfSymbolsInString(it) }
+    val partsLines = lines.map { getPositionsOfPartsInString(it) }
+
+    var validParts = mutableListOf<Part>()
+
+    partsLines.forEachIndexed { lineOn, parts ->
+        parts.forEach { part ->
+            // previous line
+            if (lineOn > 0) {
+
+                val prevLineSymbols = symbolsLines[lineOn - 1]
+                val prevLineParts = partsLines[lineOn - 1]
+                val prevLinePart = prevLineParts.firstOrNull { it.value == part.value }
+                if (prevLinePart != null) {
+                    val prevLineSymbol = prevLineSymbols.firstOrNull { it == part.start }
+                    if (prevLineSymbol != null) {
+                        validParts.add(part)
+                    }
+                }
+            }
+
+        }
+
+    }
+
     return -1
+
 }
 
 fun doPart2(lines: List<String>): Int {

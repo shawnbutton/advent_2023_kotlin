@@ -68,14 +68,16 @@ fun main() {
 }
 
 fun doPart1(lines: List<String>): Int {
-    val games = lines.map { parseGame(it) }
-    val possible = games.filter { isPossible(it) }
-    return possible.sumOf(Game::number)
+    return lines
+        .map { parseGame(it) }
+        .filter { isPossible(it) }
+        .sumOf(Game::number)
 }
 
 fun doPart2(lines: List<String>): Int {
-    val games = lines.map { parseGame(it) }
-    val minimumCubes = games.map { calculateMinimumCubes(it) }
-    return minimumCubes.sumOf(Draw::calcPower)
+    return lines
+        .map { parseGame(it) }
+        .map { calculateMinimumCubes(it) }
+        .sumOf(Draw::calcPower)
 }
 

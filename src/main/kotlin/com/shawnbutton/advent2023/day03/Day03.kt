@@ -68,25 +68,30 @@ fun doPart1(lines: List<String>): Int {
 
     partsLines.forEachIndexed { lineOn, parts ->
         parts.forEach { part ->
+            var found = false;
             // previous line
             if (lineOn > 0) {
-
-                val prevLineSymbols = symbolsLines[lineOn - 1]
-                val prevLineParts = partsLines[lineOn - 1]
-                val prevLinePart = prevLineParts.firstOrNull { it.value == part.value }
-                if (prevLinePart != null) {
-                    val prevLineSymbol = prevLineSymbols.firstOrNull { it == part.start }
-                    if (prevLineSymbol != null) {
-                        validParts.add(part)
-                    }
+                if (isSymbolForPart(part, symbolsLines[lineOn - 1])) {
+                    found = true
+                }
+            }
+            // current line
+            if (isSymbolForPart(part, symbolsLines[lineOn])) {
+                found = true
+            }
+            // next line
+            if (lineOn < partsLines.size - 1) {
+                if (isSymbolForPart(part, symbolsLines[lineOn + 1])) {
+                    found = true
                 }
             }
 
+            if (found) validParts.add(part)
         }
 
     }
 
-    return -1
+    return validParts.sumOf { it.value }
 
 }
 

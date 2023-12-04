@@ -9,19 +9,16 @@ fun main() {
 
     print(doPart1(lines))
     print("\n")
-//    print(doPart2(lines))
+    print(doPart2(lines))
 }
 
-fun getPositionsOfSymbolsInString(line: String): List<Int> {
-    if (line.isEmpty()) {
-        return listOf()
-    }
+fun positionsOfSymbols(line: String): List<Int> {
     return line.toCharArray().map { it ->
         it != '.' && !it.isDigit()
     }.withIndex().filter { it.value }.map { it.index }
 }
 
-fun getPositionsOfPartsInString(line: String): List<Part> {
+fun positionsOfParts(line: String): List<Part> {
 
     val parts = mutableListOf<Part>()
     val prevChar: Char = '.'
@@ -58,13 +55,15 @@ fun isSymbolForPart(part: Part, symbols: List<Int>): Boolean {
     return symbols.any { it >= part.start - 1 && it <= part.end + 1 }
 }
 
-
+fun isPartForGear(gear: Int, parts: List<Part>): List<Part> {
+    return parts.filter { gear >= it.start - 1 && gear <= it.end + 1 }
+}
 
 fun doPart1(lines: List<String>): Int {
-    val symbolsLines = lines.map { getPositionsOfSymbolsInString(it) }
-    val partsLines = lines.map { getPositionsOfPartsInString(it) }
+    val symbolsLines = lines.map { positionsOfSymbols(it) }
+    val partsLines = lines.map { positionsOfParts(it) }
 
-    var validParts = mutableListOf<Part>()
+    val validParts = mutableListOf<Part>()
 
     partsLines.forEachIndexed { lineOn, parts ->
         parts.forEach { part ->
@@ -95,7 +94,44 @@ fun doPart1(lines: List<String>): Int {
 
 }
 
+fun positionsOfGears(line: String): List<Int> {
+    if (line.isEmpty()) {
+        return listOf()
+    }
+    return line.toCharArray().map { it ->
+        it == '*'
+    }.withIndex().filter { it.value }.map { it.index }
+}
+
 fun doPart2(lines: List<String>): Int {
-    return -1
+    val gearLines = lines.map { positionsOfGears(it) }
+    val partsLines = lines.map { positionsOfParts(it) }
+
+    var totalGearValues = 0
+
+    gearLines.forEachIndexed { lineOn, gears ->
+        gears.forEach { gear ->
+            val parts = mutableListOf<Part>()
+            // previous line
+            if (lineOn > 0) {
+                parts.addAll(isPartForGear(gear, partsLines[lineOn - 1]))
+            }
+            // current line
+            parts.addAll(isPartForGear(gear, partsLines[lineOn]))
+
+            // next line
+            if (lineOn < partsLines.size - 1) {
+                parts.addAll(isPartForGear(gear, partsLines[lineOn + 1]))
+            }
+
+            if (parts.size == 2) {
+                totalGearValues += parts[0].value * parts[1].value
+            }
+        }
+
+    }
+
+    return totalGearValues
+
 }
 

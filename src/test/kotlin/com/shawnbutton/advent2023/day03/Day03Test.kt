@@ -18,18 +18,18 @@ class Day03Test {
 
     @Test
     fun shouldMakeListOfSymbolsLocations() {
-        assertEquals(listOf<Int>(), getPositionsOfSymbolsInString(""))
-        assertEquals(listOf(0), getPositionsOfSymbolsInString("*"))
-        assertEquals(listOf(0,1), getPositionsOfSymbolsInString("++"))
-        assertEquals(listOf(1), getPositionsOfSymbolsInString(".+"))
-        assertEquals(listOf(11), getPositionsOfSymbolsInString(".0123456789+"))
+        assertEquals(listOf<Int>(), positionsOfSymbols(""))
+        assertEquals(listOf(0), positionsOfSymbols("*"))
+        assertEquals(listOf(0,1), positionsOfSymbols("++"))
+        assertEquals(listOf(1), positionsOfSymbols(".+"))
+        assertEquals(listOf(11), positionsOfSymbols(".0123456789+"))
     }
 
     @Test
     fun shouldMakeListOfPartLocations() {
-        assertEquals(listOf(Part(123, 0, 2)), getPositionsOfPartsInString("123"))
-        assertEquals(listOf(Part(123, 0, 2)), getPositionsOfPartsInString("123"))
-        assertEquals(listOf(Part(value=123, start=1, end=3), Part(value=45, start=5, end=6)), getPositionsOfPartsInString("#123$45%"))
+        assertEquals(listOf(Part(123, 0, 2)), positionsOfParts("123"))
+        assertEquals(listOf(Part(123, 0, 2)), positionsOfParts("123"))
+        assertEquals(listOf(Part(value=123, start=1, end=3), Part(value=45, start=5, end=6)), positionsOfParts("#123$45%"))
     }
 
 
@@ -57,6 +57,22 @@ class Day03Test {
     fun doPart1() {
         val input = listOf(line0, line1, line2, line3, line4, line5, line6, line7, line8, line9)
         assertEquals(4361, doPart1(input))
+    }
+
+    @Test
+    fun shouldMakeListOfGearLocations() {
+        assertEquals(listOf<Int>(), positionsOfGears(""))
+        assertEquals(listOf(0), positionsOfGears("*"))
+        assertEquals(listOf(0, 1), positionsOfGears("**"))
+        assertEquals(listOf(1), positionsOfGears("$*$"))
+        assertEquals(listOf(1, 2), positionsOfGears("!**!"))
+    }
+
+
+    @Test
+    fun doPart2() {
+        val input = listOf(line0, line1, line2, line3, line4, line5, line6, line7, line8, line9)
+        assertEquals(467835, doPart2(input))
     }
 
 }

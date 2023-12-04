@@ -1,12 +1,11 @@
 package com.shawnbutton.advent2023.day04
 
-import com.shawnbutton.advent2023.loadFile
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class Day04Test {
 
-    val line0 = "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53"
+    val line0 = "Card 1: 41  48 83 86 17 | 83 86  6 31 17  9 48 53"
     val line1 = "Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19"
     val line2 = "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1"
     val line3 = "Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83"
@@ -26,8 +25,18 @@ class Day04Test {
         val response = parseLine(line0)
 
         assertEquals(expected, response)
-
     }
 
+    @Test
+    fun `should count winning`() {
+        assertEquals(0, countWinning(listOf(0), listOf(1)))
+        assertEquals(1, countWinning(listOf(1), listOf(1)))
+        assertEquals(1, countWinning(listOf(1, 2), listOf(1)))
+        assertEquals(2, countWinning(listOf(1, 2), listOf(1,2)))
+    }
 
+    @Test
+    fun `should do part 1`() {
+        assertEquals(13, doPart1(lines))
+    }
 }

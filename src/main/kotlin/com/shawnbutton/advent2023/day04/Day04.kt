@@ -1,7 +1,6 @@
 package com.shawnbutton.advent2023.day04
 
 import com.shawnbutton.advent2023.loadFile
-import java.lang.Math.pow
 import kotlin.math.pow
 
 data class Card(val cardNumber: Int, val winning: List<Int>, val yours: List<Int>, var copies: Int = 1, var wins: Int = 0)

@@ -33,10 +33,23 @@ class Day04Test {
         assertEquals(1, countWinning(listOf(1), listOf(1)))
         assertEquals(1, countWinning(listOf(1, 2), listOf(1)))
         assertEquals(2, countWinning(listOf(1, 2), listOf(1,2)))
+
+        assertEquals(4, countWinning(parseLine(line0).winning, parseLine(line0).yours))
+        assertEquals(2, countWinning(parseLine(line1).winning, parseLine(line1).yours))
+        assertEquals(2, countWinning(parseLine(line2).winning, parseLine(line2).yours))
+        assertEquals(1, countWinning(parseLine(line3).winning, parseLine(line3).yours))
+        assertEquals(0, countWinning(parseLine(line4).winning, parseLine(line4).yours))
+        assertEquals(0, countWinning(parseLine(line5).winning, parseLine(line5).yours))
+
     }
 
     @Test
     fun `should do part 1`() {
         assertEquals(13, doPart1(lines))
+    }
+
+    @Test
+    fun `should do part 2`() {
+        assertEquals(30, doPart2(lines))
     }
 }

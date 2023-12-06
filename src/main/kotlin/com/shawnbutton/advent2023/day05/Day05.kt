@@ -22,13 +22,17 @@ fun makeRange(line: String): RangeMap {
     return RangeMap(segments[1], segments[1] + segments[2] - 1, segments[0] - segments[1])
 }
 
-fun transform(range: RangeMap, seed: Int): Int {
-    return when {
-        seed < range.sourceFrom || seed > range.sourceTo -> {
-            seed
-        }
+fun transformOneRange(range: RangeMap, seed: Int): Int {
+    return if (seed >= range.sourceFrom && seed <= range.sourceTo) {
+        seed + range.destinationOffset
+    } else {
+        seed
+    }
+}
 
-        else -> seed + range.destinationOffset
+fun transformAll(ranges: List<RangeMap>, seed: Int): Int? {
+    return ranges.fold(seed) { acc, range ->
+        transformOneRange(range, acc)
     }
 }
 

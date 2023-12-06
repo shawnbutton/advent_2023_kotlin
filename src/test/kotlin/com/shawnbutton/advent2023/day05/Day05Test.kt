@@ -24,26 +24,36 @@ class Day05Test {
 
     @Test
     fun `should convert when found at start of range`() {
-        assertEquals(10, transform(range, 15))
+        assertEquals(10, transformOneRange(range, 15))
     }
 
 
     @Test
     fun `should convert when found in range`() {
-        assertEquals(10, transform(range, 15))
+        assertEquals(10, transformOneRange(range, 15))
     }
 
     @Test
     fun `should convert when found at end range`() {
-        assertEquals(10, transform(range, 15))
+        assertEquals(10, transformOneRange(range, 15))
     }
 
     @Test
     fun `should return seed when not found in range`() {
-        assertEquals(14, transform(range, 14))
-        assertEquals(21, transform(range, 21))
+        assertEquals(14, transformOneRange(range, 14))
+        assertEquals(21, transformOneRange(range, 21))
     }
 
+    @Test
+    fun `should transform through multiple ranges`() {
+        val range1 = RangeMap(5, 10, 15)
+        val range2 = RangeMap(20, 24, 20)
+        val ranges = listOf(range1, range2)
+
+        assertEquals(16, transformAll(ranges, 16)) // miss entirely
+        assertEquals(42, transformAll(ranges, 7))  // hit first and second range
+        assertEquals(25, transformAll(ranges, 10)) // hit first range only
+    }
 
     @Test
     fun `should get various structures`() {
@@ -51,12 +61,41 @@ class Day05Test {
 
         assertEquals(7, convertMaps.size)
 
-        val convertTypes = listOf("seed|soil", "soil|fertilizer", "fertilizer|water", "water|light", "light|temperature", "temperature|humidity", "humidity|location")
-        assertEquals(convertTypes, convertMaps.map{ it.from + "|" + it.to} )
+        val convertTypes = listOf(
+            "seed|soil",
+            "soil|fertilizer",
+            "fertilizer|water",
+            "water|light",
+            "light|temperature",
+            "temperature|humidity",
+            "humidity|location"
+        )
+        assertEquals(convertTypes, convertMaps.map { it.from + "|" + it.to })
 
         assertEquals(2, convertMaps[0].rangeMap.size)
-        val expected = listOf(RangeMap(sourceFrom=98, sourceTo=99, destinationOffset=-48), RangeMap(sourceFrom=50, sourceTo=97, destinationOffset=2))
+        val expected = listOf(
+            RangeMap(sourceFrom = 98, sourceTo = 99, destinationOffset = -48),
+            RangeMap(sourceFrom = 50, sourceTo = 97, destinationOffset = 2)
+        )
         assertEquals(expected, convertMaps[0].rangeMap)
+    }
+
+
+    //    @Test
+    fun `should do multiple mappings`() {
+        val convertMaps = parseMaps(lines)
+
+        val seed = 79
+//        val soil = transform(convertMaps[0].rangeMap[0], seed)
+//        assertEquals(81, soil)
+//        val fertilizer = transform(convertMaps[1].rangeMap[0], soil)
+//        val water = transform(convertMaps[2].rangeMap[0], fertilizer)
+//        val light = transform(convertMaps[3].rangeMap[0], water)
+//        val temperature = transform(convertMaps[4].rangeMap[0], light)
+//        val humidity = transform(convertMaps[5].rangeMap[0], temperature)
+//        val location = transform(convertMaps[6].rangeMap[0], humidity)
+
+//        assertEquals(14, location)
     }
 
 }

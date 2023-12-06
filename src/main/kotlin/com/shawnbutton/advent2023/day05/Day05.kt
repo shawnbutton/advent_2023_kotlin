@@ -16,9 +16,15 @@ fun getSeeds(lines: List<String>): List<Long> {
         .map { it.toLong() }
 }
 
+fun getSeedsAsRanges(lines: List<String>): List<Pair<Long, Long>> {
+    return getSeeds(lines)
+        .chunked(2)
+        .map { Pair(it[0], it[0] + it[1]) }
+}
+
+
 fun makeRange(line: String): RangeMap {
     val segments = line.split(" ").map { it.toLong() }
-
     return RangeMap(segments[1], segments[1] + segments[2] - 1, segments[0] - segments[1])
 }
 
@@ -68,12 +74,26 @@ fun doPart1(lines: List<String>): Long {
     val seeds = getSeeds(lines)
     val convertMaps = parseMaps(lines)
 
-
     return seeds.map { performAllTransforms(convertMaps, it) }.minOf { it }
 }
 
 fun doPart2(lines: List<String>): Long {
-    return -1
+    val seedsRanges = getSeedsAsRanges(lines)
+    val convertMaps = parseMaps(lines)
+
+    val listOFResults = seedsRanges.minOf { seeds ->
+        print(seeds)
+        print("\n")
+        val minForRange = (seeds.first..seeds.second)
+            .minOf { seed ->
+                performAllTransforms(convertMaps, seed)
+            }
+        print(minForRange)
+        print("\n")
+        minForRange
+    }
+
+    return listOFResults
 }
 
 
@@ -83,4 +103,5 @@ fun main() {
     print(doPart1(lines))
     print("\n")
     print(doPart2(lines))
+    print("\n")
 }

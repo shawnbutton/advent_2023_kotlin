@@ -4,6 +4,8 @@ import com.shawnbutton.advent2023.loadFile
 
 data class RangeMap(val sourceFrom: Int, val sourceTo: Int, val destinationOffset: Int)
 
+data class ConvertMap(val from: String, val to: String, val rangeMap: MutableList<RangeMap>)
+
 fun getSeeds(lines: List<String>): List<Int> {
     val seedLine = lines.find { it.startsWith("seeds: ") };
     return seedLine!!
@@ -17,11 +19,33 @@ fun getSeeds(lines: List<String>): List<Int> {
 fun makeRange(line: String): RangeMap {
     val segments = line.split(" ").map { it.toInt() }
 
-    return RangeMap(segments[1], segments[2], segments[0])
+    return RangeMap(segments[1], segments[1] + segments[2] - 1, segments[0] - segments[1])
 }
 
 fun transform(range: RangeMap, seed: Int): Int {
-    return seed - range.destinationOffset
+    return when {
+        seed < range.sourceFrom || seed > range.sourceTo -> {
+            seed
+        }
+
+        else -> seed + range.destinationOffset
+    }
+}
+
+fun parseMaps(lines: List<String>): List<ConvertMap> {
+    return lines
+        .fold(mutableListOf<ConvertMap>()) { acc, line ->
+            if (line.contains(" map:")) {
+                val mapElements = line.substringBefore(" map:").split("-to-")
+                acc.add(ConvertMap(mapElements[0], mapElements[1], mutableListOf()))
+            } else if (line.isEmpty() || line.startsWith("seeds:")) {
+                // do nothing
+            } else {
+                val rangeMap = makeRange(line)
+                acc.last().rangeMap.add(rangeMap)
+            }
+            acc
+        }
 }
 
 fun doPart1(lines: List<String>): Int {

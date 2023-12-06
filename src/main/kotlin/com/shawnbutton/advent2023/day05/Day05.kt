@@ -2,27 +2,27 @@ package com.shawnbutton.advent2023.day05
 
 import com.shawnbutton.advent2023.loadFile
 
-data class RangeMap(val sourceFrom: Int, val sourceTo: Int, val destinationOffset: Int)
+data class RangeMap(val sourceFrom: Long, val sourceTo: Long, val destinationOffset: Long)
 
 data class ConvertMap(val from: String, val to: String, val rangeMap: MutableList<RangeMap>)
 
-fun getSeeds(lines: List<String>): List<Int> {
+fun getSeeds(lines: List<String>): List<Long> {
     val seedLine = lines.find { it.startsWith("seeds: ") };
     return seedLine!!
         .split(": ")
         .get(1)
         .trim()
         .split(" ")
-        .map { it.toInt() }
+        .map { it.toLong() }
 }
 
 fun makeRange(line: String): RangeMap {
-    val segments = line.split(" ").map { it.toInt() }
+    val segments = line.split(" ").map { it.toLong() }
 
     return RangeMap(segments[1], segments[1] + segments[2] - 1, segments[0] - segments[1])
 }
 
-fun transformOneRange(range: RangeMap, seed: Int): Int {
+fun transformOneRange(range: RangeMap, seed: Long): Long {
     return if (seed >= range.sourceFrom && seed <= range.sourceTo) {
         seed + range.destinationOffset
     } else {
@@ -30,9 +30,21 @@ fun transformOneRange(range: RangeMap, seed: Int): Int {
     }
 }
 
-fun transformAll(ranges: List<RangeMap>, seed: Int): Int {
-    return ranges.fold(seed) { acc, range ->
-        transformOneRange(range, acc)
+fun transformAll(ranges: List<RangeMap>, seed: Long): Long {
+    return ranges.find { range ->
+        seed >= range.sourceFrom && seed <= range.sourceTo
+    }?.let { range ->
+        seed + range.destinationOffset
+    } ?: run {
+        seed
+    }
+}
+
+fun performAllTransforms(convertMaps: List<ConvertMap>, seed: Long): Long {
+    return convertMaps.fold(seed) { acc, convertMap ->
+        val ranges = convertMap.rangeMap
+        val temp = transformAll(ranges, acc)
+        temp
     }
 }
 
@@ -52,17 +64,21 @@ fun parseMaps(lines: List<String>): List<ConvertMap> {
         }
 }
 
-fun doPart1(lines: List<String>): Int {
-    return -1
+fun doPart1(lines: List<String>): Long {
+    val seeds = getSeeds(lines)
+    val convertMaps = parseMaps(lines)
+
+
+    return seeds.map { performAllTransforms(convertMaps, it) }.minOf { it }
 }
 
-fun doPart2(lines: List<String>): Int {
+fun doPart2(lines: List<String>): Long {
     return -1
 }
 
 
 fun main() {
-    val lines = loadFile("/day04.txt")
+    val lines = loadFile("/day05.txt")
 
     print(doPart1(lines))
     print("\n")

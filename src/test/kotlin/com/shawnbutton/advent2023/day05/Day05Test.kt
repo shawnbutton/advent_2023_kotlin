@@ -51,8 +51,17 @@ class Day05Test {
         val ranges = listOf(range1, range2)
 
         assertEquals(16, transformAll(ranges, 16)) // miss entirely
-        assertEquals(42, transformAll(ranges, 7))  // hit first and second range
-        assertEquals(25, transformAll(ranges, 10)) // hit first range only
+        assertEquals(22, transformAll(ranges, 7))  // hit first
+        assertEquals(43, transformAll(ranges, 23)) // hit second
+    }
+
+    @Test
+    fun `should use the first transform of overlappiong ranges`() {
+        val range1 = RangeMap(5, 20, 10)
+        val range2 = RangeMap(10, 30, 20)
+        val ranges = listOf(range1, range2)
+
+        assertEquals(25, transformAll(ranges, 15)) // miss entirely
     }
 
     @Test
@@ -80,9 +89,8 @@ class Day05Test {
         assertEquals(expected, convertMaps[0].rangeMap)
     }
 
-
     @Test
-    fun `should do multiple mappings`() {
+    fun `all mappings should work`() {
         val convertMaps = parseMaps(lines)
 
         val seed = 79
@@ -107,6 +115,22 @@ class Day05Test {
 
         val location = transformAll(convertMaps[6].rangeMap, humidity)
         assertEquals(82, location)
+    }
+
+    @Test
+    fun `should do multiple mappings`() {
+//        val convertMaps = parseMaps(lines)
+//        assertEquals(82, performAllTransforms(convertMaps, 79))
+
+        val convertMaps = parseMaps(lines)
+        assertEquals(43, performAllTransforms(convertMaps, 14))
+
+
+    }
+
+    @Test
+    fun `should do part 1`() {
+        assertEquals(35, doPart1(lines))
     }
 
 }

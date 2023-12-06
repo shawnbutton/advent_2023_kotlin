@@ -30,7 +30,7 @@ fun transformOneRange(range: RangeMap, seed: Int): Int {
     }
 }
 
-fun transformAll(ranges: List<RangeMap>, seed: Int): Int? {
+fun transformAll(ranges: List<RangeMap>, seed: Int): Int {
     return ranges.fold(seed) { acc, range ->
         transformOneRange(range, acc)
     }

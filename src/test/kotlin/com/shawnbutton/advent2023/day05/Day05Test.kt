@@ -81,21 +81,32 @@ class Day05Test {
     }
 
 
-    //    @Test
+    @Test
     fun `should do multiple mappings`() {
         val convertMaps = parseMaps(lines)
 
         val seed = 79
-//        val soil = transform(convertMaps[0].rangeMap[0], seed)
-//        assertEquals(81, soil)
-//        val fertilizer = transform(convertMaps[1].rangeMap[0], soil)
-//        val water = transform(convertMaps[2].rangeMap[0], fertilizer)
-//        val light = transform(convertMaps[3].rangeMap[0], water)
-//        val temperature = transform(convertMaps[4].rangeMap[0], light)
-//        val humidity = transform(convertMaps[5].rangeMap[0], temperature)
-//        val location = transform(convertMaps[6].rangeMap[0], humidity)
 
-//        assertEquals(14, location)
+        val soil = transformAll(convertMaps[0].rangeMap, seed)
+        assertEquals(81, soil)
+
+        val fertilizer = transformAll(convertMaps[1].rangeMap, soil)
+        assertEquals(81, fertilizer)
+
+        val water = transformAll(convertMaps[2].rangeMap, fertilizer)
+        assertEquals(81, water)
+
+        val light = transformAll(convertMaps[3].rangeMap, water)
+        assertEquals(74, light)
+
+        val temperature = transformAll(convertMaps[4].rangeMap, light)
+        assertEquals(78, temperature)
+
+        val humidity = transformAll(convertMaps[5].rangeMap, temperature)
+        assertEquals(78, humidity)
+
+        val location = transformAll(convertMaps[6].rangeMap, humidity)
+        assertEquals(82, location)
     }
 
 }

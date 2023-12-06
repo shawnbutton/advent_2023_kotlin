@@ -19,19 +19,10 @@ fun makeRange(line: String): RangeMap {
 
     return RangeMap(segments[1], segments[2], segments[0])
 }
-//
-//    transform(range: RangeMap, number: number): number {
-//        return 50;
-//    }
-//
-//    makeRangeMap(sourceStart: number, size: number, destinationStart: number) {
-//        return {
-//            sourceFrom: sourceStart,
-//            sourceTo: sourceStart + size - 1,
-//            destinationOffset: destinationStart - sourceStart
-//        };
-//    }
-//}
+
+fun transform(range: RangeMap, seed: Int): Int {
+    return seed - range.destinationOffset
+}
 
 fun doPart1(lines: List<String>): Int {
     return -1

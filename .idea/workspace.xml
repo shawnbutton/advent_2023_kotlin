@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day05/Day05.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day05/Day05.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +92,8 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'advent_2023_kotlin.test'">
-    <configuration name="Day06Test.should calculate time for distance" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Day01Test">
+    <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -106,7 +106,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day06.Day06Test.should calculate time for distance&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day01.Day01Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,7 +195,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.Day06Test.should calculate time for distance" />
+      <item itemvalue="Gradle.Day01Test" />
       <item itemvalue="Gradle.Day06Test.should count ways to win" />
       <item itemvalue="Gradle.Day06Test.should do part 2" />
       <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
@@ -203,11 +203,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
         <item itemvalue="Kotlin.Day06Kt" />
         <item itemvalue="Gradle.Day06Test.should do part 2" />
         <item itemvalue="Gradle.Day06Test.should count ways to win" />
-        <item itemvalue="Gradle.Day06Test.should calculate time for distance" />
       </list>
     </recent_temporary>
   </component>

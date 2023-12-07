@@ -6,13 +6,10 @@ fun Int?.isLessThan(other: Int?) =
     this != null && other != null && this < other
 
 fun calcDigits(line: String): Int {
-    val digits = line
-        .toCharArray()
-        .filter { it.isDigit() }
+    val first = line.first { it.isDigit() }
+    val last = line.last { it.isDigit() }
 
-    val rightDigits = "" + digits.first() + digits.last()
-
-    return rightDigits.toInt()
+    return "${first}${last}".toInt()
 }
 
 fun sumAll(lines: List<String>): Int {

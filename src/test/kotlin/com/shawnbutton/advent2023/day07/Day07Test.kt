@@ -20,5 +20,14 @@ class Day07Test {
         assertContentEquals(listOf("3", "2", "T", "3", "K"), result)
     }
 
+    fun `can find a pair`() {
+        val result = valueHand(listOf("A", "A", "2", "3", "4"))
+        assertEquals(result, HandValue.Pair)
+    }
+
+    fun `can find two pair`() {
+        val result = valueHand(listOf("A", "A", "2", "2", "3"))
+        assertEquals(result, HandValue.TwoPair)
+    }
 
 }

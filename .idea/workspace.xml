@@ -53,12 +53,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin",
     "last_opened_file_path": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin/com/shawnbutton/advent2023/day05",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.39310345",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -92,7 +95,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day01Test">
+  <component name="RunManager" selected="Gradle.Tests in 'advent_2023_kotlin.test'">
     <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -194,22 +197,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Gradle.Day01Test" />
-      <item itemvalue="Gradle.Day06Test.should count ways to win" />
-      <item itemvalue="Gradle.Day06Test.should do part 2" />
-      <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
-      <item itemvalue="Kotlin.Day06Kt" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
-        <item itemvalue="Kotlin.Day06Kt" />
-        <item itemvalue="Gradle.Day06Test.should do part 2" />
-        <item itemvalue="Gradle.Day06Test.should count ways to win" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-8336523bb0d9-55c9c8bc" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -219,6 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701469135827</updated>
+      <workItem from="1701984632555" duration="5000" />
     </task>
     <servers />
   </component>
@@ -227,15 +227,6 @@
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/Advent.kt</url>
-          <line>27</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
         <watch expression="cards[i].copies" />

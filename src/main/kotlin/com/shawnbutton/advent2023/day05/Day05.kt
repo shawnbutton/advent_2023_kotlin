@@ -22,7 +22,6 @@ fun getSeedsAsRanges(lines: List<String>): List<Pair<Long, Long>> {
         .map { Pair(it[0], it[0] + it[1]) }
 }
 
-
 fun makeRange(line: String): RangeMap {
     val segments = line.split(" ").map { it.toLong() }
     return RangeMap(segments[1], segments[1] + segments[2] - 1, segments[0] - segments[1])
@@ -49,8 +48,7 @@ fun transformAll(ranges: List<RangeMap>, seed: Long): Long {
 fun performAllTransforms(convertMaps: List<ConvertMap>, seed: Long): Long {
     return convertMaps.fold(seed) { acc, convertMap ->
         val ranges = convertMap.rangeMap
-        val temp = transformAll(ranges, acc)
-        temp
+        transformAll(ranges, acc)
     }
 }
 
@@ -61,7 +59,7 @@ fun parseMaps(lines: List<String>): List<ConvertMap> {
                 val mapElements = line.substringBefore(" map:").split("-to-")
                 acc.add(ConvertMap(mapElements[0], mapElements[1], mutableListOf()))
             } else if (line.isEmpty() || line.startsWith("seeds:")) {
-                // do nothing
+                // ignore seeds and empty lines
             } else {
                 val rangeMap = makeRange(line)
                 acc.last().rangeMap.add(rangeMap)

@@ -18,9 +18,7 @@ fun parseLine(line: String): Card {
 }
 
 fun countWinning(winning: List<Int>, yours: List<Int>): Int {
-    return winning
-        .filter { yours.contains(it) }
-        .count()
+    return winning.count { yours.contains(it) }
 }
 
 fun doPart1(lines: List<String>): Int {
@@ -30,7 +28,6 @@ fun doPart1(lines: List<String>): Int {
         .map{ (2.0).pow(it - 1).toInt() }
         .sumOf { it}
 }
-
 
 fun doPart2(lines: List<String>): Int {
     val cards = lines
@@ -42,12 +39,11 @@ fun doPart2(lines: List<String>): Int {
 
         val endRange = minOf(index + winning, cards.size - 1)
         for (i in index + 1..endRange) {
-            cards[i].copies = cards[i].copies + card.copies // add a copy for every copy of this card
+            cards[i].copies += card.copies // add a copy for every copy of this card
         }
     }
 
     return cards.sumOf { it.copies }
-
 }
 
 fun main() {

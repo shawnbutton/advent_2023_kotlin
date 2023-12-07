@@ -21,4 +21,10 @@ class Day06Test {
         assertEquals(288, doPart1(listOf(race1, race2, race3)))
     }
 
+    @Test
+    fun `should do part 2`() {
+        val bigRace = Race(71530, 940200)
+        assertEquals(71503, doPart1(listOf(bigRace)))
+    }
+
 }

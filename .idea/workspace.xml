@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day04/Day04.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day04/Day04.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day06/Day06.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day06/Day06.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day06/Day06Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day06/Day06Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,30 +95,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'advent_2023_kotlin.test'">
-    <configuration name="Day06Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day06.Day06Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Day06Test.should calculate time for distance" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -165,6 +143,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Day06Test.should do part 2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day06.Day06Test.should do part 2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests in 'advent_2023_kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -195,9 +197,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.Day06Test" />
       <item itemvalue="Gradle.Day06Test.should calculate time for distance" />
       <item itemvalue="Gradle.Day06Test.should count ways to win" />
+      <item itemvalue="Gradle.Day06Test.should do part 2" />
       <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
       <item itemvalue="Kotlin.Day06Kt" />
     </list>
@@ -205,9 +207,9 @@
       <list>
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
         <item itemvalue="Kotlin.Day06Kt" />
+        <item itemvalue="Gradle.Day06Test.should do part 2" />
         <item itemvalue="Gradle.Day06Test.should count ways to win" />
         <item itemvalue="Gradle.Day06Test.should calculate time for distance" />
-        <item itemvalue="Gradle.Day06Test" />
       </list>
     </recent_temporary>
   </component>

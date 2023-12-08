@@ -30,4 +30,28 @@ class Day07Test {
         assertEquals(result, HandValue.TwoPair)
     }
 
+    @Test
+    fun `can find three of a kind`() {
+        val result = valueHand(listOf("A", "A", "A", "2", "3"))
+        assertEquals(result, HandValue.ThreeOfAKind)
+    }
+
+    @Test
+    fun `can find full house`() {
+        val result = valueHand(listOf("A", "A", "A", "2", "2"))
+        assertEquals(result, HandValue.FullHouse)
+    }
+
+    @Test
+    fun `can find four of a kind`() {
+        val result = valueHand(listOf("A", "A", "A", "A", "2"))
+        assertEquals(result, HandValue.FourOfAKind)
+    }
+
+    @Test
+    fun `can find five of a kind`() {
+        val result = valueHand(listOf("A", "A", "A", "A", "A"))
+        assertEquals(result, HandValue.FiveOfAKind)
+    }
+
 }

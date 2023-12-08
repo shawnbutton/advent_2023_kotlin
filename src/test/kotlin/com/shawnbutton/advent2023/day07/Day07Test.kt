@@ -54,4 +54,9 @@ class Day07Test {
         assertEquals(result, HandValue.FiveOfAKind)
     }
 
+    @Test
+    fun `can find high card`() {
+        val result = valueHand(listOf("A", "2", "3", "4", "5"))
+        assertEquals(result, HandValue.HighCard)
+    }
 }

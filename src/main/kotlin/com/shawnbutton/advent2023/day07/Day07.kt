@@ -36,9 +36,7 @@ fun valueHand(hand: List<String>): HandValue {
         onePair  -> HandValue.Pair
         else -> HandValue.HighCard
     }
-
 }
-
 
 fun doPartA(races: List<Race>): Long {
     return -1L

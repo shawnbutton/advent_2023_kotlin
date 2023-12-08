@@ -2,6 +2,20 @@ package com.shawnbutton.advent2023.day07
 
 import com.shawnbutton.advent2023.day06.Race
 
+data class Hand(val cards: List<String>, val type: HandValue, val bid: Int) : Comparable<Hand> {
+    override fun compareTo(other: Hand) =
+        compareValuesBy(
+            this, other,
+            { it.type.ordinal },
+            { rankMap[it.cards[0]] },
+            { rankMap[it.cards[1]] },
+            { rankMap[it.cards[2]] },
+            { rankMap[it.cards[3]] },
+            { rankMap[it.cards[4]] },
+        )
+}
+
+
 enum class HandValue {
     HighCard,
     Pair,
@@ -32,7 +46,7 @@ fun parseHand(line: String): List<String> {
     return line.substringBefore(" ").toList().map { it.toString() }
 }
 
-fun rankHand(hand: List<String>): HandValue {
+fun getHandType(hand: List<String>): HandValue {
     val groupedByCard = hand.groupBy { it }
 
     val numPairs = groupedByCard.filter { it.value.size == 2 }.size
@@ -45,11 +59,11 @@ fun rankHand(hand: List<String>): HandValue {
 
     return when {
         fiveOfAKind -> HandValue.FiveOfAKind
-        fourOfAKind  -> HandValue.FourOfAKind
-        threeOfAKind  && onePair  -> HandValue.FullHouse
-        threeOfAKind  -> HandValue.ThreeOfAKind
-        twoPairs  -> HandValue.TwoPair
-        onePair  -> HandValue.Pair
+        fourOfAKind -> HandValue.FourOfAKind
+        threeOfAKind && onePair -> HandValue.FullHouse
+        threeOfAKind -> HandValue.ThreeOfAKind
+        twoPairs -> HandValue.TwoPair
+        onePair -> HandValue.Pair
         else -> HandValue.HighCard
     }
 }
@@ -59,7 +73,7 @@ fun largestWithinRank(hand1: List<String>, hand2: List<String>): Int {
         .zip(hand2)
         .first { it.first != it.second }
         .let { (card1, card2) ->
-            return if (getCardValue(card1) > getCardValue(card2)) 0 else 1
+            return getCardValue(card1).compareTo(getCardValue(card2))
         }
 }
 
@@ -68,9 +82,29 @@ private fun getCardValue(card: String): Int {
     return rankMap.get(card)!!
 }
 
-fun doPartA(races: List<Race>): Long {
+fun doPartA(lines: List<String>): Long {
+    val hands = lines.map { parseHand(it) }
+    val bids = lines.map { it.substringAfter(" ").toInt() }
+
+    val handsByRank = hands.zip(bids)
+        .map {
+            Hand(it.first, getHandType(it.first), it.second)
+        }
+        .sorted()
+
+
+//                    hand1, hand2 ->
+//            if (hand1.type == hand2.type) {
+//                largestWithinRank(hand1.cards, hand2.cards)
+//            } else {
+//                hand1.type.compareTo(hand2.type)
+//            }
+//        }
+
+
     return -1L
 }
+
 
 fun doPartB(race: Race): Long {
     return -1L

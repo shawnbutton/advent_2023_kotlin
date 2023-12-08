@@ -51,9 +51,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Day07Test.do part a.executor": "Debug",
     "Gradle.Day07Test.executor": "Run",
     "Gradle.Day07Test.rank hands.executor": "Run",
     "Gradle.Day07Test.same rank - if highest same second card wins.executor": "Run",
+    "Gradle.Day07Test.same type - highest first card wins.executor": "Debug",
+    "Gradle.Day07Test.should sort hands by rank.executor": "Run",
+    "Gradle.Day07Test.should sort hands of same range by card.executor": "Run",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -104,7 +108,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day07Test.rank hands">
+  <component name="RunManager" selected="Gradle.Day07Test">
     <configuration name="Day07Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -129,7 +133,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Test.rank hands" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day07Test.do part a" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -142,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.rank hands&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.do part a&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -153,7 +157,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Test.same rank - if highest same second card wins" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day07Test.same type - highest first card wins" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +170,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.same rank - if highest same second card wins&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.same type - highest first card wins&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,7 +181,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'advent_2023_kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day07Test.should sort hands by rank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -189,6 +193,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should sort hands by rank&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -199,19 +205,37 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day06Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day06.Day06Kt" />
-      <module name="advent_2023_kotlin.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Day07Test.should sort hands of same range by card" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should sort hands of same range by card&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day07Test.rank hands" />
         <item itemvalue="Gradle.Day07Test" />
-        <item itemvalue="Gradle.Day07Test.same rank - if highest same second card wins" />
-        <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
+        <item itemvalue="Gradle.Day07Test.should sort hands of same range by card" />
+        <item itemvalue="Gradle.Day07Test.should sort hands by rank" />
+        <item itemvalue="Gradle.Day07Test.do part a" />
+        <item itemvalue="Gradle.Day07Test.same type - highest first card wins" />
       </list>
     </recent_temporary>
   </component>
@@ -239,6 +263,20 @@
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt</url>
+          <line>104</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt</url>
+          <line>97</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
         <watch expression="cards[i].copies" />

@@ -18,18 +18,22 @@ fun parseHand(line: String): List<String> {
 
 fun valueHand(hand: List<String>): HandValue {
     val groupedByCard = hand.groupBy { it }
-    val pairs = groupedByCard.filter { it.value.size == 2 }.size
-    val threeOfAKind = groupedByCard.filter { it.value.size == 3 }.size
-    val fourOfAKind = groupedByCard.filter { it.value.size == 4 }.size
-    val fiveOfAKind = groupedByCard.filter { it.value.size == 5 }.size
+
+    val numPairs = groupedByCard.filter { it.value.size == 2 }.size
+
+    val onePair = numPairs == 1
+    val twoPairs = numPairs == 2
+    val threeOfAKind = groupedByCard.any { it.value.size == 3 }
+    val fourOfAKind = groupedByCard.any { it.value.size == 4 }
+    val fiveOfAKind = groupedByCard.any { it.value.size == 5 }
 
     return when {
-        fiveOfAKind == 1 -> HandValue.FiveOfAKind
-        fourOfAKind == 1 -> HandValue.FourOfAKind
-        threeOfAKind == 1 && pairs == 1 -> HandValue.FullHouse
-        threeOfAKind == 1 -> HandValue.ThreeOfAKind
-        pairs == 2 -> HandValue.TwoPair
-        pairs == 1 -> HandValue.Pair
+        fiveOfAKind -> HandValue.FiveOfAKind
+        fourOfAKind  -> HandValue.FourOfAKind
+        threeOfAKind  && onePair  -> HandValue.FullHouse
+        threeOfAKind  -> HandValue.ThreeOfAKind
+        twoPairs  -> HandValue.TwoPair
+        onePair  -> HandValue.Pair
         else -> HandValue.HighCard
     }
 

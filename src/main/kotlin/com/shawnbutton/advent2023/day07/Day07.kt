@@ -1,6 +1,7 @@
 package com.shawnbutton.advent2023.day07
 
 import com.shawnbutton.advent2023.day06.Race
+import com.shawnbutton.advent2023.loadFile
 
 data class Hand(val cards: List<String>, val type: HandValue, val bid: Int) : Comparable<Hand> {
     override fun compareTo(other: Hand) =
@@ -14,7 +15,6 @@ data class Hand(val cards: List<String>, val type: HandValue, val bid: Int) : Co
             { rankMap[it.cards[4]] },
         )
 }
-
 
 enum class HandValue {
     HighCard,
@@ -68,41 +68,35 @@ fun getHandType(hand: List<String>): HandValue {
     }
 }
 
-fun largestWithinRank(hand1: List<String>, hand2: List<String>): Int {
-    hand1
-        .zip(hand2)
-        .first { it.first != it.second }
-        .let { (card1, card2) ->
-            return getCardValue(card1).compareTo(getCardValue(card2))
-        }
-}
+//fun largestWithinRank(hand1: List<String>, hand2: List<String>): Int {
+//    hand1
+//        .zip(hand2)
+//        .first { it.first != it.second }
+//        .let { (card1, card2) ->
+//            return getCardValue(card1).compareTo(getCardValue(card2))
+//        }
+//}
 
 private fun getCardValue(card: String): Int {
     print("card: $card")
     return rankMap.get(card)!!
 }
 
-fun doPartA(lines: List<String>): Long {
+fun doPartA(lines: List<String>): Int {
     val hands = lines.map { parseHand(it) }
     val bids = lines.map { it.substringAfter(" ").toInt() }
 
-    val handsByRank = hands.zip(bids)
+    val total = hands.zip(bids)
         .map {
             Hand(it.first, getHandType(it.first), it.second)
         }
         .sorted()
+        .withIndex()
+        .sumOf {
+            (it.index + 1) * it.value.bid
+        }
 
-
-//                    hand1, hand2 ->
-//            if (hand1.type == hand2.type) {
-//                largestWithinRank(hand1.cards, hand2.cards)
-//            } else {
-//                hand1.type.compareTo(hand2.type)
-//            }
-//        }
-
-
-    return -1L
+    return total
 }
 
 
@@ -111,7 +105,9 @@ fun doPartB(race: Race): Long {
 }
 
 fun main() {
-//    print(doPart1(races))
+    val lines = loadFile("/day07.txt")
+
+    print(doPartA(lines))
     print("\n")
 
 //    print(doPart2(bigRace))

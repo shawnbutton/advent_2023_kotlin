@@ -125,6 +125,6 @@ class Day07Test {
     @Test
     fun `do part a`() {
         val result = doPartA(lines)
-        assertEquals(483, result)
+        assertEquals(6440, result)
     }
 }

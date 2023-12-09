@@ -99,23 +99,23 @@ class Day07Test {
 
     @Test
     fun `should sort hands by rank`() {
-        val hand1 = Hand(listOf("A", "A", "2", "3", "4"), HandValue.Pair, 111)
-        val hand2 = Hand(listOf("A", "A", "2", "3", "4"), HandValue.TwoPair, 111)
-        val hand3 = Hand(listOf("A", "A", "2", "3", "4"), HandValue.FullHouse, 111)
+        val hand1 = Hand("AA234", HandValue.Pair, 111)
+        val hand2 = Hand("AA234", HandValue.TwoPair, 111)
+        val hand3 = Hand("AA234", HandValue.FullHouse, 111)
 
         val list1 = listOf(hand1, hand2, hand3).sorted()
         val list2 = listOf(hand3, hand2, hand1).sorted()
 
-        assertContentEquals(listOf(hand3, hand2, hand1), list1)
+        assertContentEquals(listOf(hand1, hand2, hand3), list1)
 
         assertContentEquals(list1, list2)
     }
 
     @Test
     fun `should sort hands of same range by card`() {
-        val hand1 = Hand(listOf("T", "2", "2", "2", "2"), HandValue.Pair, 111)
-        val hand2 = Hand(listOf("4", "2", "2", "2", "2"), HandValue.Pair, 111)
-        val hand3 = Hand(listOf("A", "2", "2", "2", "2"), HandValue.Pair, 111)
+        val hand1 = Hand("T2222", HandValue.Pair, 111)
+        val hand2 = Hand("42222", HandValue.Pair, 111)
+        val hand3 = Hand("A2222", HandValue.Pair, 111)
 
         val sorted = listOf(hand1, hand2, hand3).sorted()
 
@@ -135,5 +135,11 @@ class Day07Test {
     fun `do part a`() {
         val result = doPartA(lines)
         assertEquals(6440, result)
+    }
+
+    @Test
+    fun `do part b`() {
+        val result = doPartB(lines)
+        assertEquals(5905, result)
     }
 }

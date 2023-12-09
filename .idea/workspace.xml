@@ -63,6 +63,7 @@
   "keyToString": {
     "Gradle.Build advent_2023_kotlin.executor": "Run",
     "Gradle.Day07Test.do part a.executor": "Run",
+    "Gradle.Day07Test.do part b.executor": "Run",
     "Gradle.Day07Test.executor": "Run",
     "Gradle.Day07Test.rank hands.executor": "Run",
     "Gradle.Day07Test.same rank - if highest same second card wins.executor": "Run",
@@ -88,7 +89,8 @@
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
 }]]></component>
@@ -121,7 +123,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day07Kt">
+  <component name="RunManager" selected="Gradle.Day07Test">
     <configuration name="Day07Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -170,6 +172,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Day07Test.do part b" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.do part b&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Day07Test.should replace J with all possible cards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -194,30 +220,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Test.should sort hands of same range by card" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should sort hands of same range by card&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Day07Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day07.Day07Kt" />
       <module name="advent_2023_kotlin.main" />
@@ -227,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Day07Kt" />
-        <item itemvalue="Gradle.Day07Test.should replace J with all possible cards" />
-        <item itemvalue="Gradle.Day07Test.do part a" />
         <item itemvalue="Gradle.Day07Test" />
-        <item itemvalue="Gradle.Day07Test.should sort hands of same range by card" />
+        <item itemvalue="Kotlin.Day07Kt" />
+        <item itemvalue="Gradle.Day07Test.do part b" />
+        <item itemvalue="Gradle.Day07Test.do part a" />
+        <item itemvalue="Gradle.Day07Test.should replace J with all possible cards" />
       </list>
     </recent_temporary>
   </component>
@@ -262,9 +264,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt</url>
-          <line>129</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt</url>
+          <line>153</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

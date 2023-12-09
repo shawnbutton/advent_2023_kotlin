@@ -20,11 +20,11 @@ data class HandB(val cards: String, val type: HandValue, val bid: Int) : Compara
         return compareValuesBy(
             this, other,
             { it.type.ordinal },
-            { rankMap[it.cards.substring(0..0)] },
-            { rankMap[it.cards.substring(1..1)] },
-            { rankMap[it.cards.substring(2..2)] },
-            { rankMap[it.cards.substring(3..3)] },
-            { rankMap[it.cards.substring(4..4)] },
+            { rankMapB[it.cards.substring(0..0)] },
+            { rankMapB[it.cards.substring(1..1)] },
+            { rankMapB[it.cards.substring(2..2)] },
+            { rankMapB[it.cards.substring(3..3)] },
+            { rankMapB[it.cards.substring(4..4)] },
         )
     }
 }
@@ -97,12 +97,6 @@ fun getHandType(hand: String): HandValue {
     }
 }
 
-
-private fun getCardValue(card: String): Int {
-    print("card: $card")
-    return rankMap.get(card)!!
-}
-
 fun allPossibleHands(cards: String): List<String> {
     val nonJ = cards.filter { it != 'J' }
     val numJs = 5 - nonJ.length
@@ -147,17 +141,23 @@ fun doPartB(lines: List<String>): Long {
     val hands = lines.map { parseHand(it) }
     val bids = lines.map { it.substringAfter(" ").toInt() }
 
-    val total = hands.zip(bids)
+    val sorted = hands.zip(bids)
         .map {
-            HandB(it.first, getHandType(it.first), it.second)
+            val allPossiblehands = allPossibleHands(it.first)
+            allPossiblehands.map { hand ->
+                HandB(it.first, getHandType(hand), it.second)
+            }.sorted().last()
+
         }
         .sorted()
+
+    val total = sorted
         .withIndex()
         .sumOf {
             (it.index + 1) * it.value.bid
         }
 
-    return -1
+    return total.toLong()
 }
 
 fun main() {
@@ -166,6 +166,6 @@ fun main() {
     print(doPartA(lines))
     print("\n")
 
-//    print(doPart2(bigRace))
+    print(doPartB(lines))
     print("\n")
 }

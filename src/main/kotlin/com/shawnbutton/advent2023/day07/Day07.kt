@@ -2,20 +2,21 @@ package com.shawnbutton.advent2023.day07
 
 import com.shawnbutton.advent2023.loadFile
 
-data class Hand(val cards: String, val type: HandValue, val bid: Int) : Comparable<Hand> {
+class Hand(val cards: String, val type: HandValue, val bid: Int) : Comparable<Hand> {
     override fun compareTo(other: Hand): Int {
         return compareValuesBy(
             this, other,
             { it.type.ordinal },
-            { rankMap[it.cards.substring(0..0)] },
-            { rankMap[it.cards.substring(1..1)] },
-            { rankMap[it.cards.substring(2..2)] },
-            { rankMap[it.cards.substring(3..3)] },
-            { rankMap[it.cards.substring(4..4)] },
+            { rankMapA[it.cards.substring(0..0)] },
+            { rankMapA[it.cards.substring(1..1)] },
+            { rankMapA[it.cards.substring(2..2)] },
+            { rankMapA[it.cards.substring(3..3)] },
+            { rankMapA[it.cards.substring(4..4)] },
         )
     }
 }
-data class HandB(val cards: String, val type: HandValue, val bid: Int) : Comparable<HandB> {
+
+class HandB(val cards: String, val type: HandValue, val bid: Int) : Comparable<HandB> {
     override fun compareTo(other: HandB): Int {
         return compareValuesBy(
             this, other,
@@ -39,7 +40,7 @@ enum class HandValue {
     FiveOfAKind
 }
 
-val rankMap = mapOf(
+val rankMapA = mapOf(
     "A" to 14,
     "K" to 13,
     "Q" to 12,
@@ -55,24 +56,9 @@ val rankMap = mapOf(
     "2" to 2
 )
 
-val rankMapB = mapOf(
-    "A" to 14,
-    "K" to 13,
-    "Q" to 12,
-    "T" to 10,
-    "9" to 9,
-    "8" to 8,
-    "7" to 7,
-    "6" to 6,
-    "5" to 5,
-    "4" to 4,
-    "3" to 3,
-    "2" to 2,
-    "J" to 1,
-)
-
-fun parseHand(line: String): String {
-    return line.substringBefore(" ")
+val rankMapB = rankMapA.toMutableMap().apply {
+    this.remove("J")
+    this.put("J", 1)
 }
 
 fun getHandType(hand: String): HandValue {
@@ -120,44 +106,36 @@ fun appendAllCards(hands: List<String>): List<String> {
 }
 
 fun doPartA(lines: List<String>): Int {
-    val hands = lines.map { parseHand(it) }
-    val bids = lines.map { it.substringAfter(" ").toInt() }
+    val (hands, bids) = getInput(lines)
 
-    val total = hands.zip(bids)
-        .map {
-            Hand(it.first, getHandType(it.first), it.second)
-        }
+    return hands.zip(bids)
+        .map { (cards, bid) -> Hand(cards, getHandType(cards), bid) }
         .sorted()
         .withIndex()
-        .sumOf {
-            (it.index + 1) * it.value.bid
-        }
-
-    return total
+        .sumOf { (it.index + 1) * it.value.bid }
 }
 
 
 fun doPartB(lines: List<String>): Long {
-    val hands = lines.map { parseHand(it) }
-    val bids = lines.map { it.substringAfter(" ").toInt() }
+    val (hands, bids) = getInput(lines)
 
-    val sorted = hands.zip(bids)
-        .map {
-            val allPossiblehands = allPossibleHands(it.first)
-            allPossiblehands.map { hand ->
-                HandB(it.first, getHandType(hand), it.second)
-            }.sorted().last()
-
-        }
+    return hands.zip(bids)
+        .map { (cards, bid) -> getBestPossibleHand(cards, bid) }
         .sorted()
-
-    val total = sorted
         .withIndex()
-        .sumOf {
-            (it.index + 1) * it.value.bid
-        }
+        .sumOf { (it.index + 1) * it.value.bid }
+        .toLong()
+}
 
-    return total.toLong()
+private fun getBestPossibleHand(cards: String, bid: Int) = allPossibleHands(cards)
+    .map { hand ->
+        HandB(cards, getHandType(hand), bid)
+    }.sorted().last()
+
+private fun getInput(lines: List<String>): Pair<List<String>, List<Int>> {
+    val hands = lines.map { it.substringBefore(" ") }
+    val bids = lines.map { it.substringAfter(" ").toInt() }
+    return Pair(hands, bids)
 }
 
 fun main() {

@@ -14,12 +14,6 @@ class Day07Test {
 
     val lines = listOf(line1, line2, line3, line4, line5)
 
-    @Test
-    fun `can parse a hand`() {
-        val result = parseHand(line1)
-        assertEquals("32T3K", result)
-    }
-
     fun `can find a pair`() {
         val result = getHandType("AA234")
         assertEquals(result, HandValue.Pair)

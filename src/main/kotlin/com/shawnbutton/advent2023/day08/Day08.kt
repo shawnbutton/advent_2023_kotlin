@@ -36,15 +36,48 @@ fun doPartA(lines: List<String>): Int {
 }
 
 
-fun doPartB(lines: List<String>): Long {
-    return -1
+fun doPartB(lines: List<String>): Int {
+    val instructions = getIntructions(lines)
+    print(instructions + "\n")
+    val graph = getGraph(lines)
+
+    var nodesOn = graph.keys.filter { it.endsWith("A") }
+
+    var directionOn = 0
+    var count = 0
+
+    while (!nodesOn.all { it.endsWith("Z") }) {
+        val left = instructions[directionOn] == 'L'
+        nodesOn = nodesOn.map {
+            if (left) {
+                graph.get(it)!!.first
+            } else {
+                graph.get(it)!!.second
+            }
+        }
+
+//        print(nodesOn.map { it.last().toString() }.toString())
+
+        directionOn = (directionOn + 1) % instructions.length
+        count += 1
+//        print("" + count + ": " + nodesOn.first() + " " + nodesOn[1] + " " + nodesOn.last() + "\n")
+
+        val totalZ = nodesOn.count { it.endsWith("Z") }
+        if (totalZ > 5) {
+            print("" + count + ": " + totalZ + "\n")
+        }
+
+        if ((count % 10000000).equals(0)) print("count:" + count + "\n")
+    }
+
+    return count
 }
 
 fun main() {
     val lines = loadFile("/day08.txt")
 
-    print(doPartA(lines))
-    print("\n")
+//    print(doPartA(lines))
+//    print("\n")
 
     print(doPartB(lines))
     print("\n")

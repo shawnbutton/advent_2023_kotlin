@@ -6,7 +6,6 @@ fun getIntructions(lines: List<String>): String {
     return lines[0]
 }
 
-
 fun getGraph(lines: List<String>): Map<String, Pair<String, String>> {
     return lines.slice(2..lines.size - 1).map {
         val key = it.substringBefore(" = ")
@@ -14,8 +13,6 @@ fun getGraph(lines: List<String>): Map<String, Pair<String, String>> {
         key to Pair(left, right)
     }.toMap()
 }
-
-
 
 fun doPartA(lines: List<String>): Int {
     val instructions = getIntructions(lines)
@@ -41,7 +38,6 @@ fun doPartA(lines: List<String>): Int {
 
 fun doPartB(lines: List<String>): Long {
     return -1
-
 }
 
 fun main() {

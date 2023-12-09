@@ -7,7 +7,6 @@
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day08/Day08Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day08/Day08Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +79,7 @@
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
+    "Kotlin.Day08Kt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -132,7 +132,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day08Test (1)">
+  <component name="RunManager" selected="Kotlin.Day08Kt">
     <configuration name="Day08Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -227,8 +227,8 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day07.Day07Kt" />
+    <configuration name="Day08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day08.Day08Kt" />
       <module name="advent_2023_kotlin.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -236,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Day08Kt" />
         <item itemvalue="Gradle.Day08Test (1)" />
         <item itemvalue="Gradle.Day08Test.do part a" />
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
         <item itemvalue="Gradle.Day08Test" />
-        <item itemvalue="Kotlin.Day07Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -266,17 +266,6 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt</url>
-          <line>20</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

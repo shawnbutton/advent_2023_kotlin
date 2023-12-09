@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day08/Day08Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,71 +58,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build advent_2023_kotlin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.do part a.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.do part b.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.rank hands.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.same rank - if highest same second card wins.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.same type - highest first card wins.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Day07Test.should replace J with all possible cards.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.should sort hands by rank.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Day07Test.should sort hands of same range by card.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'advent_2023_kotlin.test'.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.Day07Kt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin/com/shawnbutton/advent2023/day06&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.39310345&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build advent_2023_kotlin.executor": "Run",
+    "Gradle.Day07Test.do part a.executor": "Run",
+    "Gradle.Day07Test.do part b.executor": "Run",
+    "Gradle.Day07Test.executor": "Run",
+    "Gradle.Day07Test.rank hands.executor": "Run",
+    "Gradle.Day07Test.same rank - if highest same second card wins.executor": "Run",
+    "Gradle.Day07Test.same type - highest first card wins.executor": "Debug",
+    "Gradle.Day07Test.should replace J with all possible cards.executor": "Run",
+    "Gradle.Day07Test.should sort hands by rank.executor": "Run",
+    "Gradle.Day07Test.should sort hands of same range by card.executor": "Run",
+    "Gradle.Day08Test (1).executor": "Run",
+    "Gradle.Day08Test.executor": "Run",
+    "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
+    "Kotlin.Day07Kt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin",
+    "last_opened_file_path": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin/com/shawnbutton/advent2023/day07",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.39310345",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;,
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day06" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day05" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day06" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day03" />
-      <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day02" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
       <recent name="com.shawnbutton.advent2023" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.shawnbutton.advent2023.day08" />
       <recent name="com.shawnbutton.advent2023.day07" />
       <recent name="com.shawnbutton.advent2023.day06" />
       <recent name="com.shawnbutton.advent2023.day01" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.shawnbutton.advent2023.day07" />
       <recent name="com.shawnbutton.advent2023.day06" />
       <recent name="com.shawnbutton.advent2023.day05" />
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day07Kt">
+  <component name="RunManager" selected="Gradle.Day08Test (1)">
     <configuration name="Day07Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -138,30 +141,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Day07Test.do part a" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.do part a&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -196,7 +175,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Test.should replace J with all possible cards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day08Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -209,7 +188,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should replace J with all possible cards&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day08.Day08Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Day08Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day08Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -229,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day08Test (1)" />
+        <item itemvalue="Gradle.Day08Test" />
         <item itemvalue="Kotlin.Day07Kt" />
         <item itemvalue="Gradle.Day07Test" />
         <item itemvalue="Gradle.Day07Test.do part b" />
-        <item itemvalue="Gradle.Day07Test.do part a" />
-        <item itemvalue="Gradle.Day07Test.should replace J with all possible cards" />
       </list>
     </recent_temporary>
   </component>

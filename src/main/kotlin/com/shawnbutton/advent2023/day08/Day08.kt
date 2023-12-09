@@ -7,7 +7,7 @@ fun getIntructions(lines: List<String>): String {
 }
 
 
-fun getDirections(lines: List<String>): Map<String, Pair<String, String>> {
+fun getGraph(lines: List<String>): Map<String, Pair<String, String>> {
     return lines.slice(2..lines.size - 1).map {
         val key = it.substringBefore(" = ")
         val (left, right) = it.substringAfter(" = (").substringBefore(")").split(", ")
@@ -18,7 +18,24 @@ fun getDirections(lines: List<String>): Map<String, Pair<String, String>> {
 
 
 fun doPartA(lines: List<String>): Int {
-    return -1
+    val instructions = getIntructions(lines)
+    val graph = getGraph(lines)
+
+    var nodeOn = "AAA"
+    var directionOn = 0
+    var count = 0
+
+    while (nodeOn != "ZZZ") {
+        nodeOn = if (instructions[directionOn] == 'L') {
+            graph.get(nodeOn)!!.first
+        } else {
+            graph.get(nodeOn)!!.second
+        }
+        directionOn = (directionOn + 1) % instructions.length
+        count += 1
+    }
+
+    return count
 }
 
 

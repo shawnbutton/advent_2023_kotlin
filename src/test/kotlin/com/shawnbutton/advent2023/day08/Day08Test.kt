@@ -8,43 +8,56 @@ class Day08Test {
 
 
     val lines = listOf(
-        "RL",
+        "RRRLR",
         "",
         "AAA = (BBB, CCC)",
         "BBB = (DDD, EEE)",
         "CCC = (ZZZ, GGG)",
-        "DDD = (DDD, DDD)",
-        "EEE = (EEE, EEE)",
-        "GGG = (GGG, GGG)",
+        "DDD = (EEE, DDD)",
+        "EEE = (EEE, ZZZ)",
+        "GGG = (GGG, DDD)",
         "ZZZ = (ZZZ, ZZZ)"
     )
 
     @Test
     fun `should get left right instructions`() {
         val leftRight = getIntructions(lines)
-        assertEquals("RL", leftRight)
+        assertEquals("RRRLR", leftRight)
     }
 
     @Test
     fun `should get map of directions`() {
-        val directions = getDirections(lines)
+        val graph = getGraph(lines)
         val expected = mapOf(
             "AAA" to Pair("BBB", "CCC"),
             "BBB" to Pair("DDD", "EEE"),
             "CCC" to Pair("ZZZ", "GGG"),
-            "DDD" to Pair("DDD", "DDD"),
-            "EEE" to Pair("EEE", "EEE"),
-            "GGG" to Pair("GGG", "GGG"),
+            "DDD" to Pair("EEE", "DDD"),
+            "EEE" to Pair("EEE", "ZZZ"),
+            "GGG" to Pair("GGG", "DDD"),
             "ZZZ" to Pair("ZZZ", "ZZZ")
         )
-        assertEquals(expected, directions)
+        assertEquals(expected, graph)
     }
 
     @Test
-    @Ignore
     fun `do part a`() {
         val result = doPartA(lines)
-        assertEquals(6440, result)
+        assertEquals(5, result)
+    }
+
+    @Test
+    fun `do part a with repeating instructions`() {
+        val lines6Turns = listOf(
+            "LLR",
+            "",
+            "AAA = (BBB, BBB)",
+            "BBB = (AAA, ZZZ)",
+            "ZZZ = (ZZZ, ZZZ)"
+        )
+
+        val result = doPartA(lines6Turns)
+        assertEquals(6, result)
     }
 
     @Test

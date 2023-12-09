@@ -1,19 +1,32 @@
 package com.shawnbutton.advent2023.day07
 
-import com.shawnbutton.advent2023.day06.Race
 import com.shawnbutton.advent2023.loadFile
 
-data class Hand(val cards: List<String>, val type: HandValue, val bid: Int) : Comparable<Hand> {
-    override fun compareTo(other: Hand) =
-        compareValuesBy(
+data class Hand(val cards: String, val type: HandValue, val bid: Int) : Comparable<Hand> {
+    override fun compareTo(other: Hand): Int {
+        return compareValuesBy(
             this, other,
             { it.type.ordinal },
-            { rankMap[it.cards[0]] },
-            { rankMap[it.cards[1]] },
-            { rankMap[it.cards[2]] },
-            { rankMap[it.cards[3]] },
-            { rankMap[it.cards[4]] },
+            { rankMap[it.cards.substring(0..0)] },
+            { rankMap[it.cards.substring(1..1)] },
+            { rankMap[it.cards.substring(2..2)] },
+            { rankMap[it.cards.substring(3..3)] },
+            { rankMap[it.cards.substring(4..4)] },
         )
+    }
+}
+data class HandB(val cards: String, val type: HandValue, val bid: Int) : Comparable<HandB> {
+    override fun compareTo(other: HandB): Int {
+        return compareValuesBy(
+            this, other,
+            { it.type.ordinal },
+            { rankMap[it.cards.substring(0..0)] },
+            { rankMap[it.cards.substring(1..1)] },
+            { rankMap[it.cards.substring(2..2)] },
+            { rankMap[it.cards.substring(3..3)] },
+            { rankMap[it.cards.substring(4..4)] },
+        )
+    }
 }
 
 enum class HandValue {
@@ -42,11 +55,27 @@ val rankMap = mapOf(
     "2" to 2
 )
 
-fun parseHand(line: String): List<String> {
-    return line.substringBefore(" ").toList().map { it.toString() }
+val rankMapB = mapOf(
+    "A" to 14,
+    "K" to 13,
+    "Q" to 12,
+    "T" to 10,
+    "9" to 9,
+    "8" to 8,
+    "7" to 7,
+    "6" to 6,
+    "5" to 5,
+    "4" to 4,
+    "3" to 3,
+    "2" to 2,
+    "J" to 1,
+)
+
+fun parseHand(line: String): String {
+    return line.substringBefore(" ")
 }
 
-fun getHandType(hand: List<String>): HandValue {
+fun getHandType(hand: String): HandValue {
     val groupedByCard = hand.groupBy { it }
 
     val numPairs = groupedByCard.filter { it.value.size == 2 }.size
@@ -68,18 +97,32 @@ fun getHandType(hand: List<String>): HandValue {
     }
 }
 
-//fun largestWithinRank(hand1: List<String>, hand2: List<String>): Int {
-//    hand1
-//        .zip(hand2)
-//        .first { it.first != it.second }
-//        .let { (card1, card2) ->
-//            return getCardValue(card1).compareTo(getCardValue(card2))
-//        }
-//}
 
 private fun getCardValue(card: String): Int {
     print("card: $card")
     return rankMap.get(card)!!
+}
+
+fun allPossibleHands(cards: String): List<String> {
+    val nonJ = cards.filter { it != 'J' }
+    val numJs = 5 - nonJ.length
+    var newCards: List<String> = mutableListOf(nonJ)
+
+    (1..numJs).forEach {
+        newCards = appendAllCards(newCards)
+    }
+    return newCards
+}
+
+fun appendAllCards(hands: List<String>): List<String> {
+    val newCards: MutableList<String> = mutableListOf()
+    hands.forEach { hand ->
+        "AKQT98765432".toList().forEach { c ->
+            newCards.add(hand + c.toString())
+        }
+    }
+
+    return newCards
 }
 
 fun doPartA(lines: List<String>): Int {
@@ -100,8 +143,21 @@ fun doPartA(lines: List<String>): Int {
 }
 
 
-fun doPartB(race: Race): Long {
-    return -1L
+fun doPartB(lines: List<String>): Long {
+    val hands = lines.map { parseHand(it) }
+    val bids = lines.map { it.substringAfter(" ").toInt() }
+
+    val total = hands.zip(bids)
+        .map {
+            HandB(it.first, getHandType(it.first), it.second)
+        }
+        .sorted()
+        .withIndex()
+        .sumOf {
+            (it.index + 1) * it.value.bid
+        }
+
+    return -1
 }
 
 fun main() {

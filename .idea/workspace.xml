@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day07.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt" afterDir="false" />
@@ -26,7 +25,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="advent_2023_kotlin" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -58,6 +67,7 @@
     "Gradle.Day07Test.rank hands.executor": "Run",
     "Gradle.Day07Test.same rank - if highest same second card wins.executor": "Run",
     "Gradle.Day07Test.same type - highest first card wins.executor": "Debug",
+    "Gradle.Day07Test.should replace J with all possible cards.executor": "Run",
     "Gradle.Day07Test.should sort hands by rank.executor": "Run",
     "Gradle.Day07Test.should sort hands of same range by card.executor": "Run",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
@@ -73,7 +83,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.39310345",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -160,7 +170,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day07Test.should sort hands by rank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day07Test.should replace J with all possible cards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +183,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should sort hands by rank&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day07.Day07Test.should replace J with all possible cards&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,10 +228,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Day07Kt" />
+        <item itemvalue="Gradle.Day07Test.should replace J with all possible cards" />
         <item itemvalue="Gradle.Day07Test.do part a" />
         <item itemvalue="Gradle.Day07Test" />
         <item itemvalue="Gradle.Day07Test.should sort hands of same range by card" />
-        <item itemvalue="Gradle.Day07Test.should sort hands by rank" />
       </list>
     </recent_temporary>
   </component>
@@ -252,22 +262,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt</url>
-          <line>100</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07/Day07.kt</url>
-          <line>97</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day07/Day07Test.kt</url>
+          <line>129</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JetRunConfigurationType">
-        <watch expression="cards[i].copies" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -17,46 +17,46 @@ class Day07Test {
     @Test
     fun `can parse a hand`() {
         val result = parseHand(line1)
-        assertContentEquals(listOf("3", "2", "T", "3", "K"), result)
+        assertEquals("32T3K", result)
     }
 
     fun `can find a pair`() {
-        val result = getHandType(listOf("A", "A", "2", "3", "4"))
+        val result = getHandType("AA234")
         assertEquals(result, HandValue.Pair)
     }
 
     fun `can find two pair`() {
-        val result = getHandType(listOf("A", "A", "2", "2", "3"))
+        val result = getHandType("AA223")
         assertEquals(result, HandValue.TwoPair)
     }
 
     @Test
     fun `can find three of a kind`() {
-        val result = getHandType(listOf("A", "A", "A", "2", "3"))
+        val result = getHandType("AAA23")
         assertEquals(result, HandValue.ThreeOfAKind)
     }
 
     @Test
     fun `can find full house`() {
-        val result = getHandType(listOf("A", "A", "A", "2", "2"))
+        val result = getHandType("AAA22")
         assertEquals(result, HandValue.FullHouse)
     }
 
     @Test
     fun `can find four of a kind`() {
-        val result = getHandType(listOf("A", "A", "A", "A", "2"))
+        val result = getHandType("AAAA2")
         assertEquals(result, HandValue.FourOfAKind)
     }
 
     @Test
     fun `can find five of a kind`() {
-        val result = getHandType(listOf("A", "A", "A", "A", "A"))
+        val result = getHandType("AAAAA")
         assertEquals(result, HandValue.FiveOfAKind)
     }
 
     @Test
     fun `can find high card`() {
-        val result = getHandType(listOf("A", "2", "3", "4", "5"))
+        val result = getHandType("A2345")
         assertEquals(result, HandValue.HighCard)
     }
 
@@ -120,6 +120,15 @@ class Day07Test {
         val sorted = listOf(hand1, hand2, hand3).sorted()
 
         assertContentEquals(listOf(hand2, hand1, hand3), sorted)
+    }
+
+    @Test
+    fun `should replace J with all possible cards`() {
+        val result1 = allPossibleHands("AKQJT")
+        assertEquals(12, result1.size)
+
+        val result2 = allPossibleHands("AKJQJ")
+        assertEquals(144, result2.size)
     }
 
     @Test

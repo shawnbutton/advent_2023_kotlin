@@ -64,7 +64,7 @@ fun doPartA(lines: List<String>): Long {
     return count
 }
 
-private fun lcm(a: Long, b: Long): Long {
+private fun lowestCommonMultiple(a: Long, b: Long): Long {
     var ma = a
     var mb = b
     var remainder: Long
@@ -78,36 +78,37 @@ private fun lcm(a: Long, b: Long): Long {
     return a * b / ma
 }
 
-fun getStepsUntilZ(instructions: List<Boolean>, node: Node): Long {
-    var count = 0L
-    var directionOn = 0
+val getStepsUntilZ: (List<Boolean>) -> (Node) -> Long = { instructions ->
+    { node ->
+        var count = 0L
+        var directionOn = 0
 
-    var nodeOn = node
-    while (!nodeOn.isZ) {
-        val left = instructions[directionOn]
+        var nodeOn = node
+        while (!nodeOn.isZ) {
+            val left = instructions[directionOn]
 
-        nodeOn = if (left) {
-            nodeOn.left!!
-        } else {
-            nodeOn.right!!
+            nodeOn = if (left) {
+                nodeOn.left!!
+            } else {
+                nodeOn.right!!
+            }
+            directionOn = (directionOn + 1) % instructions.size
+            count += 1
         }
-        directionOn = (directionOn + 1) % instructions.size
-        count += 1
+        count
     }
-    return count
 }
 
 fun doPartB(lines: List<String>): Long {
-    val startDateTime: java.util.Date = java.util.Date()
-
     val instructions = getIntructionsB(lines)
-    print(instructions + "\n")
     val graph = getGraphB(lines)
+
+    val getSteps = getStepsUntilZ(instructions)
 
     return graph
         .filter { it.name.endsWith("A") }
-        .map { getStepsUntilZ(instructions, it) }
-        .reduce { acc, i -> lcm(acc, i) }
+        .map(getSteps)
+        .reduce { acc, i -> lowestCommonMultiple(acc, i) }
 }
 
 fun main() {

@@ -1,9 +1,12 @@
 package com.shawnbutton.advent2023.day08
 
 import com.shawnbutton.advent2023.loadFile
-import java.time.LocalDate
 
-data class Node(val name: String, val isZ: Boolean, var left: Node?, var right: Node?)
+class Node(val name: String, val isZ: Boolean, var left: Node?, var right: Node?) {
+    override fun toString(): String {
+        return "Node(name='$name', isZ=$isZ)"
+    }
+}
 
 fun getIntructions(lines: List<String>): String {
     return lines[0]
@@ -61,6 +64,38 @@ fun doPartA(lines: List<String>): Long {
     return count
 }
 
+private fun lcm(a: Long, b: Long): Long {
+    var ma = a
+    var mb = b
+    var remainder: Long
+
+    while (mb != 0L) {
+        remainder = ma % mb
+        ma = mb
+        mb = remainder
+    }
+
+    return a * b / ma
+}
+
+fun getStepsUntilZ(instructions: List<Boolean>, node: Node): Long {
+    var count = 0L
+    var directionOn = 0
+
+    var nodeOn = node
+    while (!nodeOn.isZ) {
+        val left = instructions[directionOn]
+
+        nodeOn = if (left) {
+            nodeOn.left!!
+        } else {
+            nodeOn.right!!
+        }
+        directionOn = (directionOn + 1) % instructions.size
+        count += 1
+    }
+    return count
+}
 
 fun doPartB(lines: List<String>): Long {
     val startDateTime: java.util.Date = java.util.Date()
@@ -69,50 +104,17 @@ fun doPartB(lines: List<String>): Long {
     print(instructions + "\n")
     val graph = getGraphB(lines)
 
-    val nodesOn = graph.filter { it.name.endsWith("A") }.toMutableList()
-
-    var directionOn = 0
-    var count = 0L
-
-//    var maxZ = 0
-
-    while (!nodesOn.all { it.isZ }) {
-        val left = instructions[directionOn]
-
-        for ((index, node) in nodesOn.withIndex()) {
-            nodesOn[index] = if (left) {
-                node.left!!
-            } else {
-                node.right!!
-            }
-        }
-//        print(nodesOn.map { it.last().toString() }.toString())
-
-        directionOn = (directionOn + 1) % instructions.size
-        count += 1
-//        print("" + count + ": " + nodesOn.first() + " " + nodesOn[1] + " " + nodesOn.last() + "\n")
-
-//        val totalZ = nodesOn.count { it.endsWith("Z") }
-//        maxZ = Math.max(maxZ, totalZ)
-
-        if ((count % 1000000000L).equals(0L)) {
-            val nowtDateTime: java.util.Date = java.util.Date()
-
-            print("time:" + nowtDateTime.time.minus(startDateTime.time).div(1000) + "\n")
-            print("count:" + count + "\n")
-            nodesOn.forEach { print(it.name + " ") }
-            print("\n")
-        }
-    }
-
-    return count
+    return graph
+        .filter { it.name.endsWith("A") }
+        .map { getStepsUntilZ(instructions, it) }
+        .reduce { acc, i -> lcm(acc, i) }
 }
 
 fun main() {
     val lines = loadFile("/day08.txt")
 
-//    print(doPartA(lines))
-//    print("\n")
+    print(doPartA(lines))
+    print("\n")
 
     print(doPartB(lines))
     print("\n")

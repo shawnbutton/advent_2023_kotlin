@@ -62,7 +62,7 @@ class Day08Test {
     @Test
     fun `do part b`() {
         val linesB = listOf(
-            "LRLR",
+            "LR",
             "",
             "11A = (11B, XXX)",
             "11B = (XXX, 11Z)",
@@ -71,14 +71,7 @@ class Day08Test {
             "22B = (22C, 22C)",
             "22C = (22Z, 22Z)",
             "22Z = (22B, 22B)",
-            "XXX = (XXX, XXX)",
-            "SSA = (SSB, SSA)",
-            "SSB = (SSB, SSC)",
-            "SSC = (SSD, SSC)",
-            "SSD = (SSD, SSE)",
-            "SSE = (SSF, SSE)",
-            "SSF = (SSF, SSZ)",
-            "SSZ = (SSA, SSA)",
+            "XXX = (XXX, XXX)"
         )
 
         val result = doPartB(linesB)

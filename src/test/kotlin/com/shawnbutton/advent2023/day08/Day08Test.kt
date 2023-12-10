@@ -2,7 +2,6 @@ package com.shawnbutton.advent2023.day08
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.Ignore
 
 class Day08Test {
 
@@ -43,7 +42,7 @@ class Day08Test {
     @Test
     fun `do part a`() {
         val result = doPartA(lines)
-        assertEquals(5, result)
+        assertEquals(5L, result)
     }
 
     @Test
@@ -57,13 +56,13 @@ class Day08Test {
         )
 
         val result = doPartA(lines6Turns)
-        assertEquals(6, result)
+        assertEquals(6L, result)
     }
 
     @Test
     fun `do part b`() {
         val linesB = listOf(
-            "LR",
+            "LRLR",
             "",
             "11A = (11B, XXX)",
             "11B = (XXX, 11Z)",
@@ -73,16 +72,16 @@ class Day08Test {
             "22C = (22Z, 22Z)",
             "22Z = (22B, 22B)",
             "XXX = (XXX, XXX)",
-            "SSA = (SSB, ???)",
-            "SSB = (???, SSC)",
-            "SSC = (SSD, ???)",
-            "SSD = (???, SSE)",
-            "SSE = (SSF, ???)",
-            "SSF = (???, SSZ)",
-            "SSZ = (???, ???)",
+            "SSA = (SSB, SSA)",
+            "SSB = (SSB, SSC)",
+            "SSC = (SSD, SSC)",
+            "SSD = (SSD, SSE)",
+            "SSE = (SSF, SSE)",
+            "SSF = (SSF, SSZ)",
+            "SSZ = (SSA, SSA)",
         )
 
         val result = doPartB(linesB)
-        assertEquals(6, result)
+        assertEquals(6L, result)
     }
 }

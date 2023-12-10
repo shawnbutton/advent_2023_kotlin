@@ -42,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -82,6 +82,8 @@
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
     "Kotlin.Day08Kt.executor": "Run",
+    "Kotlin.Day8HACKKt (1).executor": "Run",
+    "Kotlin.Day8HACKKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -112,8 +114,8 @@
       <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day06" />
       <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day03" />
@@ -134,7 +136,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day08Test.do part b">
+  <component name="RunManager" selected="Kotlin.Day08Kt">
     <configuration name="Day08Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -149,30 +151,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.shawnbutton.advent2023.day08.Day08Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Day08Test.do part a" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day08.Day08Test.do part a&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -207,28 +185,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'advent_2023_kotlin.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Day08Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day08.Day08Kt" />
       <module name="advent_2023_kotlin.main" />
@@ -236,13 +192,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day8HACKKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day8HACKKt" />
+      <module name="advent_2023_kotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day8HACKKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day08.Day8HACKKt" />
+      <module name="advent_2023_kotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day08Test.do part b" />
         <item itemvalue="Kotlin.Day08Kt" />
+        <item itemvalue="Gradle.Day08Test.do part b" />
+        <item itemvalue="Kotlin.Day8HACKKt (1)" />
         <item itemvalue="Gradle.Day08Test (1)" />
-        <item itemvalue="Gradle.Day08Test.do part a" />
-        <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
+        <item itemvalue="Kotlin.Day8HACKKt" />
       </list>
     </recent_temporary>
   </component>
@@ -268,22 +238,6 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt</url>
-          <line>69</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08/Day08.kt</url>
-          <line>72</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

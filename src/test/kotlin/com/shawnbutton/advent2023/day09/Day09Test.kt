@@ -26,9 +26,9 @@ class Day09Test {
         val values = parseHistory(line1)
 
         val expected = listOf(
-            listOf(0, 3, 6, 9, 12, 15),
-            listOf(3, 3, 3, 3, 3),
-            listOf(0, 0, 0, 0)
+            listOf(0, 3, 6, 9, 12, 15, 18),
+            listOf(3, 3, 3, 3, 3, 3, 3),
+            listOf(0, 0, 0, 0, 0, 0, 0)
         )
 
         assertEquals(expected, getChangeSequencyRecursively(values))

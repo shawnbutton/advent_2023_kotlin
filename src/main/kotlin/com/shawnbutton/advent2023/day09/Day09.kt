@@ -26,6 +26,8 @@ fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
     val reversed = results.reversed()
     val maxSize = values.size
 
+    var prevAdd = 0
+
     val filledOut = reversed
         .withIndex()
         .map { (index, sequence) ->
@@ -36,10 +38,13 @@ fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
                     val nextElement = if (index == 0) {
                         0
                     } else {
-                        reversed[index - 1].last() + sequence.last()
+//                        FAIL // somehow add the last member of the previous list
+
+                        prevAdd + newList.last()
                     }
                     newList.add(nextElement)
                 }
+            prevAdd = newList.get(newList.size - 2)
             newList
         }
         .reversed()
@@ -50,7 +55,15 @@ fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
 
 
 fun doPartA(lines: List<String>): Int {
-    return -1
+    val fullList = lines.map { parseHistory(it) }
+        .map { getChangeSequencyRecursively(it) }
+
+    val elememts = fullList
+        .map {
+            it.first().last()
+        }
+
+    return elememts.sumOf { it }
 }
 
 fun doPartB(lines: List<String>): Int {
@@ -58,7 +71,7 @@ fun doPartB(lines: List<String>): Int {
 }
 
 fun main() {
-    val lines = loadFile("/day08.txt")
+    val lines = loadFile("/day09.txt")
 
     print(doPartA(lines))
     print("\n")

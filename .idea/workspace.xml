@@ -79,13 +79,15 @@
     "Gradle.Day08Test.do part a.executor": "Run",
     "Gradle.Day08Test.do part b.executor": "Run",
     "Gradle.Day08Test.executor": "Run",
+    "Gradle.Day09Test.doPartA.executor": "Debug",
     "Gradle.Day09Test.executor": "Run",
     "Gradle.Day09Test.should parse history line.executor": "Run",
-    "Gradle.Day09Test.should recursively get change sequence.executor": "Run",
+    "Gradle.Day09Test.should recursively get change sequence.executor": "Debug",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
     "Kotlin.Day08Kt.executor": "Run",
+    "Kotlin.Day09Kt.executor": "Debug",
     "Kotlin.Day8HACKKt (1).executor": "Run",
     "Kotlin.Day8HACKKt.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -149,31 +151,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day09Test.should recursively get change sequence">
-    <configuration name="Day08Test.do part b" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day08.Day08Test.do part b&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.Day09Test.doPartA">
     <configuration name="Day09Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -198,7 +176,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day09Test.should parse history line" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day09Test.doPartA" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -211,7 +189,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day09.Day09Test.should parse history line&quot;" />
+            <option value="&quot;com.shawnbutton.advent2023.day09.Day09Test.doPartA&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -253,8 +231,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day8HACKKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day08.Day8HACKKt" />
+    <configuration name="Day09Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day09.Day09Kt" />
       <module name="advent_2023_kotlin.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,11 +240,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day09Test.doPartA" />
         <item itemvalue="Gradle.Day09Test.should recursively get change sequence" />
         <item itemvalue="Gradle.Day09Test" />
-        <item itemvalue="Gradle.Day09Test.should parse history line" />
-        <item itemvalue="Kotlin.Day08Kt" />
-        <item itemvalue="Gradle.Day08Test.do part b" />
       </list>
     </recent_temporary>
   </component>
@@ -287,6 +263,7 @@
       <updated>1701469135827</updated>
       <workItem from="1701984632555" duration="5000" />
       <workItem from="1702177761990" duration="29000" />
+      <workItem from="1702346336270" duration="139000" />
     </task>
     <servers />
   </component>
@@ -302,8 +279,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09/Day09.kt</url>
-          <line>38</line>
-          <option name="timeStamp" value="17" />
+          <line>51</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

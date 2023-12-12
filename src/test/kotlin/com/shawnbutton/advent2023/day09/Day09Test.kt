@@ -9,6 +9,9 @@ class Day09Test {
     val line2 = "1 3 6 10 15 21"
     val line3 = "10 13 16 21 30 45"
 
+//    val lines = listOf(line2, line3)
+    val lines = listOf(line1, line2, line3)
+
     @Test
     fun `should parse history line`() {
         assertEquals(listOf(0, 3, 6, 9, 12, 15), parseHistory(line1))
@@ -36,7 +39,11 @@ class Day09Test {
 
     @Test
     fun doPartA() {
-//        val lines = loadFile("/day09.txt")
-//        assertEquals(542529149, doPartA(lines))
+
+        assertEquals(114, doPartA(lines))
     }
 }
+
+//15
+//18
+//21

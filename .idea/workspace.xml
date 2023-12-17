@@ -7,7 +7,6 @@
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09/Day09.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09/Day09.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day09/Day09Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day09/Day09Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
     "Gradle.Day08Test.do part b.executor": "Run",
     "Gradle.Day08Test.executor": "Run",
     "Gradle.Day09Test.doPartA.executor": "Debug",
-    "Gradle.Day09Test.executor": "Run",
+    "Gradle.Day09Test.executor": "Debug",
     "Gradle.Day09Test.should parse history line.executor": "Run",
     "Gradle.Day09Test.should recursively get change sequence.executor": "Debug",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
@@ -151,7 +150,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day09Test.doPartA">
+  <component name="RunManager" selected="Kotlin.Day09Kt">
     <configuration name="Day09Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -240,8 +239,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day09Test.doPartA" />
-        <item itemvalue="Gradle.Day09Test.should recursively get change sequence" />
+        <item itemvalue="Kotlin.Day09Kt" />
         <item itemvalue="Gradle.Day09Test" />
       </list>
     </recent_temporary>
@@ -264,6 +262,7 @@
       <workItem from="1701984632555" duration="5000" />
       <workItem from="1702177761990" duration="29000" />
       <workItem from="1702346336270" duration="139000" />
+      <workItem from="1702828726635" duration="3000" />
     </task>
     <servers />
   </component>
@@ -279,8 +278,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09/Day09.kt</url>
-          <line>51</line>
-          <option name="timeStamp" value="2" />
+          <line>29</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09/Day09.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

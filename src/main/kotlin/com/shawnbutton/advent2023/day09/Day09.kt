@@ -24,32 +24,19 @@ fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
     }
 
     val reversed = results.reversed()
-    val maxSize = values.size
 
-    var prevAdd = 0
+    val wantedSize = values.size
 
-    val filledOut = reversed
-        .withIndex()
-        .map { (index, sequence) ->
-            val newList = sequence.toMutableList()
+    var addToIt = 0
 
-            (newList.size..maxSize)
-                .forEach {
-                    val nextElement = if (index == 0) {
-                        0
-                    } else {
-//                        FAIL // somehow add the last member of the previous list
+    val filled = reversed.map {
+        addToIt = it.last() + addToIt
+        val newList = it.toMutableList().plus(addToIt)
+        newList
+    }
 
-                        prevAdd + newList.last()
-                    }
-                    newList.add(nextElement)
-                }
-            prevAdd = newList.get(newList.size - 2)
-            newList
-        }
-        .reversed()
-
-    return filledOut
+    return filled.reversed()
+//    return listOf(listOf(0))
 
 }
 

@@ -11,10 +11,23 @@ class Day10Test {
     val line4 = ".L-J."
     val line5 = "....."
 
+    val line1Array = arrayOf('.', '.', '.', '.', '.')
+    val line3Array = arrayOf('.', '|', '.', '|', '.')
+
     @Test
     fun `can parse line`() {
-        assertContentEquals(arrayOf('.', '.', '.', '.', '.'), parseLine(line1))
-        assertContentEquals(arrayOf('.', '|', '.', '|', '.'), parseLine(line3))
+        assertContentEquals(line1Array, parseLine(line1))
+        assertContentEquals(line3Array, parseLine(line3))
+    }
+
+    @Test
+    fun `can make a grid`() {
+        val lines = listOf(line1, line3)
+
+        val result = createGrid(lines)
+
+        assertContentEquals(line1Array, result[0])
+        assertContentEquals(line3Array, result[1])
     }
 
 //    @Test

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/dayXX/DayXX.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/dayXX/Day10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt" afterDir="false" />
+    <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="fix template">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day10/Day10Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day10/Day10Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build advent_2023_kotlin.executor": "Run",
     "Gradle.Day07Test.do part a.executor": "Run",
@@ -82,6 +84,7 @@
     "Gradle.Day09Test.executor": "Run",
     "Gradle.Day09Test.should parse history line.executor": "Run",
     "Gradle.Day09Test.should recursively get change sequence.executor": "Debug",
+    "Gradle.Day10Test.executor": "Run",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
@@ -98,7 +101,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin",
-    "last_opened_file_path": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin/com/shawnbutton/advent2023",
+    "last_opened_file_path": "/Users/shawnbutton/projects/advent_2023_kotlin/src/test/kotlin/com/shawnbutton/advent2023",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -115,11 +118,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day08" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day07" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -265,6 +268,15 @@
       <workItem from="1702346336270" duration="139000" />
       <workItem from="1702828726635" duration="3000" />
     </task>
+    <task id="LOCAL-00001" summary="fix template">
+      <option name="closed" value="true" />
+      <created>1702836979515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702836979515</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +285,10 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix template" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix template" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

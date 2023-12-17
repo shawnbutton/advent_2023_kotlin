@@ -2,6 +2,10 @@ package com.shawnbutton.advent2023.day10
 
 import com.shawnbutton.advent2023.loadFile
 
+fun parseLine(line: String): Array<Char> {
+    return line.toCharArray().toTypedArray()
+}
+
 fun doPartA(lines: List<String>): Int {
     return -1
 }

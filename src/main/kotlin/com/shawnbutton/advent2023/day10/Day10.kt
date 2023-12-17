@@ -19,7 +19,8 @@ fun connections(start: Coord, c: Char): Pair<Coord, Coord> {
         '-' -> Pair(start.left, start.right)
         'L' -> Pair(start.down.right, start.left.up)
         'J' -> Pair(start.down.left, start.right.up)
-//        '+' -> return Pair(start.up, start.down)
+        '7' -> Pair(start.up.left, start.right.down)
+        'F' -> Pair(start.up.right, start.left.down)
         else -> Pair(start, start)
     }
 }

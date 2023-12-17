@@ -41,7 +41,8 @@ class Day10Test {
         assertEquals(Pair(Coord(4, 5), Coord(6, 5)), connections(symbolLoc, '-'))
         assertEquals(Pair(Coord(6, 6), Coord(4, 4)), connections(symbolLoc, 'L'))
         assertEquals(Pair(Coord(4, 6), Coord(6, 4)), connections(symbolLoc, 'J'))
-//        assertEquals(Pair(Coord(5, 5), Coord(5, 5)), connections(symbolLoc, 'L'))
+        assertEquals(Pair(Coord(4, 4), Coord(6, 6)), connections(symbolLoc, '7'))
+        assertEquals(Pair(Coord(6, 4), Coord(4, 6)), connections(symbolLoc, 'F'))
     }
 
 

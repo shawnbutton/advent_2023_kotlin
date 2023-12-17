@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="fix template">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day10/Day10Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day10/Day10Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +82,7 @@
     "Gradle.Day09Test.executor": "Run",
     "Gradle.Day09Test.should parse history line.executor": "Run",
     "Gradle.Day09Test.should recursively get change sequence.executor": "Debug",
-    "Gradle.Day10Test.executor": "Debug",
+    "Gradle.Day10Test.executor": "Run",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
@@ -294,7 +293,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023/day10/Day10Test.kt</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

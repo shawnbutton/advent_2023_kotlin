@@ -2,6 +2,7 @@ package com.shawnbutton.advent2023.day10
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertContentEquals
+import kotlin.test.assertEquals
 
 class Day10Test {
 
@@ -28,6 +29,8 @@ class Day10Test {
 
         assertContentEquals(line1Array, result[0])
         assertContentEquals(line3Array, result[1])
+
+        assertEquals('|', result[1][1])
     }
 
 //    @Test

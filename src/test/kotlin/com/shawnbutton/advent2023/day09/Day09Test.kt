@@ -25,6 +25,19 @@ class Day09Test {
     }
 
     @Test
+    fun `should get change sequence to 0`() {
+        val values = parseHistory(line1)
+
+        val expected = listOf(
+            listOf(0, 0, 0, 0),
+            listOf(3, 3, 3, 3, 3),
+            listOf(0, 3, 6, 9, 12, 15)
+        )
+
+        assertEquals(expected, extendSequenceTo0(values))
+    }
+
+    @Test
     fun `should recursively get change sequence`() {
         val values = parseHistory(line1)
 
@@ -34,7 +47,7 @@ class Day09Test {
             listOf(0, 0, 0, 0, 0)
         )
 
-        assertEquals(expected, getChangeSequencyRecursively(values))
+        assertEquals(expected, extendChangeSequencyToRight(values))
     }
 
     @Test

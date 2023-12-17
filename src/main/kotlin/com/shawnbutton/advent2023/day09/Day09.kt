@@ -14,21 +14,10 @@ fun getChangeSequence(values: List<Int>): List<Int> {
     return changeSequence
 }
 
-fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
-    var changeSequence = values
-
-    val results = mutableListOf<List<Int>>(values)
-    while (!changeSequence.all { it == 0 }) {
-        changeSequence = getChangeSequence(changeSequence)
-        results.add(changeSequence)
-    }
-
-    val reversed = results.reversed()
-
-    val wantedSize = values.size
+fun extendChangeSequencyToRight(values: List<Int>): List<List<Int>> {
+    val reversed = extendSequenceTo0(values)
 
     var addToIt = 0
-
     val filled = reversed.map {
         addToIt = it.last() + addToIt
         val newList = it.toMutableList().plus(addToIt)
@@ -36,14 +25,24 @@ fun getChangeSequencyRecursively(values: List<Int>): List<List<Int>> {
     }
 
     return filled.reversed()
-//    return listOf(listOf(0))
+}
 
+fun extendSequenceTo0(values: List<Int>): List<List<Int>> {
+    var changeSequence = values
+
+    val results = mutableListOf(values)
+    while (!changeSequence.all { it == 0 }) {
+        changeSequence = getChangeSequence(changeSequence)
+        results.add(changeSequence)
+    }
+
+    return results.reversed()
 }
 
 
 fun doPartA(lines: List<String>): Int {
     val fullList = lines.map { parseHistory(it) }
-        .map { getChangeSequencyRecursively(it) }
+        .map { extendChangeSequencyToRight(it) }
 
     val elememts = fullList
         .map {

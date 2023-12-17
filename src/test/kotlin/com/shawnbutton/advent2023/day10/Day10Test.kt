@@ -1,4 +1,4 @@
-package com.shawnbutton.advent2023.dayXX
+package com.shawnbutton.advent2023.day10
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

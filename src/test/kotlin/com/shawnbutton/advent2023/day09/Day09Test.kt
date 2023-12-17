@@ -9,7 +9,7 @@ class Day09Test {
     val line2 = "1 3 6 10 15 21"
     val line3 = "10 13 16 21 30 45"
 
-//    val lines = listOf(line2, line3)
+    //    val lines = listOf(line2, line3)
     val lines = listOf(line1, line2, line3)
 
     @Test
@@ -38,7 +38,7 @@ class Day09Test {
     }
 
     @Test
-    fun `should recursively get change sequence`() {
+    fun `should extend change sequence to right`() {
         val values = parseHistory(line1)
 
         val expected = listOf(
@@ -48,6 +48,21 @@ class Day09Test {
         )
 
         assertEquals(expected, extendChangeSequencyToRight(values))
+    }
+
+    @Test
+    fun `should extend change sequence to left`() {
+        val values = parseHistory(line3)
+
+        val expected = listOf(
+            listOf(5, 10, 13, 16, 21, 30, 45),
+            listOf(5, 3, 3, 5, 9, 15),
+            listOf(-2, 0, 2, 4, 6),
+            listOf(2, 2, 2, 2),
+            listOf(0, 0, 0)
+        )
+
+        assertEquals(expected, extendChangeSequencyToLeft(values))
     }
 
     @Test

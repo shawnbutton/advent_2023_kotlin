@@ -27,6 +27,19 @@ fun extendChangeSequencyToRight(values: List<Int>): List<List<Int>> {
     return filled.reversed()
 }
 
+fun extendChangeSequencyToLeft(values: List<Int>): List<List<Int>> {
+    val reversed = extendSequenceTo0(values)
+
+    var addToIt = 0
+    val filled = reversed.map {
+        addToIt = it.first() - addToIt
+        val newList = listOf(addToIt) + it
+        newList
+    }
+
+    return filled.reversed()
+}
+
 fun extendSequenceTo0(values: List<Int>): List<List<Int>> {
     var changeSequence = values
 
@@ -53,7 +66,15 @@ fun doPartA(lines: List<String>): Int {
 }
 
 fun doPartB(lines: List<String>): Int {
-    return -1
+    val fullList = lines.map { parseHistory(it) }
+        .map { extendChangeSequencyToLeft(it) }
+
+    val elememts = fullList
+        .map {
+            it.first().first()
+        }
+
+    return elememts.sumOf { it }
 }
 
 fun main() {
